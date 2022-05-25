@@ -19,9 +19,10 @@ import ProjetJDR.THF_SpringBoot.entity.Consommables;
 import ProjetJDR.THF_SpringBoot.entity.Equipement;
 import ProjetJDR.THF_SpringBoot.entity.Joueur;
 import ProjetJDR.THF_SpringBoot.entity.JsonViews;
-import jdr.services.BoutiqueService;
-import jdr.services.CompteService;
-import jdr.services.PersonnageService;
+import ProjetJDR.THF_SpringBoot.services.BoutiqueService;
+import ProjetJDR.THF_SpringBoot.services.CompteService;
+import ProjetJDR.THF_SpringBoot.services.PersonnageService;
+
 @RestController
 @RequestMapping("/admin")
 //@CrossOrigin(origins = "*")

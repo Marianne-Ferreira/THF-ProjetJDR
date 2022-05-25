@@ -3,7 +3,6 @@ package ProjetJDR.THF_SpringBoot.restControllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,12 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import jdr.entity.Joueur;
-import jdr.entity.JsonViews;
-import jdr.entity.Personnage;
-import jdr.repositories.CompteRepository;
-import jdr.services.CompteService;
-import jdr.services.PersonnageService;
+import ProjetJDR.THF_SpringBoot.entity.Joueur;
+import ProjetJDR.THF_SpringBoot.entity.JsonViews;
+import ProjetJDR.THF_SpringBoot.entity.Personnage;
+import ProjetJDR.THF_SpringBoot.services.CompteService;
+import ProjetJDR.THF_SpringBoot.services.PersonnageService;
 
 @RestController
 @RequestMapping("/joueur")

@@ -5,7 +5,7 @@ import javax.persistence.SequenceGenerator;
 
 @Entity
 @SequenceGenerator(name="seqBoutique", sequenceName = "seq_equipement", initialValue = 1, allocationSize = 1)
-public class Equipement {
+public class Equipement extends Boutique {
 
 	private String libelle; 
 	private String description; 

@@ -5,12 +5,12 @@ spring:
  datasource:
    driver: org.postgresql.Driver
    password: postgres
-   url: jdbc:postgresql://localhost:5432/the_heroes_foundry
+   url: jdbc:postgresql://localhost:5432/THF
    username: postgres
   
  jpa:
   hibernate:
-     ddl-auto: validate
+     ddl-auto: create
   properties:
    hibernate:
     dialect: org.hibernate.dialect.PostgreSQL10Dialect

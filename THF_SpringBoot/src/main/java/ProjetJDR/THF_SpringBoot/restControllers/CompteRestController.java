@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import jdr.entity.Compte;
-import jdr.entity.JsonViews;
-import jdr.services.CompteService;
+import ProjetJDR.THF_SpringBoot.entity.Compte;
+import ProjetJDR.THF_SpringBoot.entity.JsonViews;
+import ProjetJDR.THF_SpringBoot.services.CompteService;
 
 @RestController
 @RequestMapping("/api/compte")

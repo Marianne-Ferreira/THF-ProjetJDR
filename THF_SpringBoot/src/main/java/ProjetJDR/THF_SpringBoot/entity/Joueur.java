@@ -5,7 +5,7 @@ import javax.persistence.SequenceGenerator;
 
 @Entity
 @SequenceGenerator(name="seqCompte", sequenceName = "seq_joueur", initialValue = 1, allocationSize = 1)
-public class Joueur {
+public class Joueur extends Compte {
 
 	private String pseudo;
 
