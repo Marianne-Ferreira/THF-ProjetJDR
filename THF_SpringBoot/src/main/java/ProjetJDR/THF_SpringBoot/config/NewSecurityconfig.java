@@ -15,13 +15,13 @@ public class NewSecurityconfig {
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		// @formatter:off
-		http.antMatcher("/api/**")
+		http.antMatcher("/compte/**")
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 				.and()
-				.csrf().ignoringAntMatchers("/api/**")
+				.csrf().ignoringAntMatchers("/compte/**")
 				.and()
 				.authorizeHttpRequests()
-					.antMatchers(HttpMethod.POST, "/api/auth/inscription").permitAll()
+					.antMatchers(HttpMethod.POST, "/compte/auth/inscription").permitAll()
 					.antMatchers("/api/**").authenticated()
 				.and()
 				.httpBasic();

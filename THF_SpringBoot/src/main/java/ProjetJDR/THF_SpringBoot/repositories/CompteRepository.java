@@ -6,11 +6,15 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import ProjetJDR.THF_SpringBoot.entity.Compte;
 import ProjetJDR.THF_SpringBoot.entity.Joueur;
 
 public interface CompteRepository extends JpaRepository <Compte, Long>{
+
+	@Query("Select j from Joueur j where j.pseudo=:pseudo")
+	Optional<Joueur> findByPseudo(String pseudo);
 
 	@Query("Select c from Compte c where c.login=:login and c.password=:password")
 	Optional<Compte> seConnecter(@Param("login") String login, @Param("password") String password);

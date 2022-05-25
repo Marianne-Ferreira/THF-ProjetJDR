@@ -1,5 +1,6 @@
 package ProjetJDR.THF_SpringBoot.entity;
 
+import java.util.Collection;
 import java.util.Objects;
 
 import javax.persistence.GeneratedValue;
@@ -7,10 +8,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import com.fasterxml.jackson.annotation.JsonView;
 
 @MappedSuperclass
-public abstract class Compte {
+public abstract class Compte implements UserDetails{
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqCompte")
 	@JsonView(JsonViews.Common.class)
@@ -82,6 +86,37 @@ public abstract class Compte {
 			return false;
 		Compte other = (Compte) obj;
 		return Objects.equals(id, other.id);
+	}
+	
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 	
 	
