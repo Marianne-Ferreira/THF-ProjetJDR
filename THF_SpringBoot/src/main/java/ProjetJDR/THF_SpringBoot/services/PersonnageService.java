@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ProjetJDR.THF_SpringBoot.entity.Metier;
 import ProjetJDR.THF_SpringBoot.entity.Personnage;
 import ProjetJDR.THF_SpringBoot.exceptions.PersonnageException;
 import ProjetJDR.THF_SpringBoot.repositories.PersonnageRepository;
@@ -31,9 +32,16 @@ public class PersonnageService {
 	}
 
 	public Personnage getByIdWithStuff(Long id) {
-		return personnageRepository.findByIdWithStuff(id).orElseThrow(RuntimeException::new);
+		return personnageRepository.findByIdWithStuff(id).orElseThrow(PersonnageException::new);
 
 	}
+	
+	//Retourne tous les personnages dont le metier est celui indiqué par l'utilisateur
+	public Personnage getPersonnageByMetier(Metier metier) {
+		return personnageRepository.findPersonnageByMetier(metier).orElseThrow(PersonnageException::new);
+
+	}
+	
 
 	public void create(Personnage personnage) {
 		if (personnage.getNom() == null || personnage.getNom().isEmpty()) {
