@@ -43,11 +43,11 @@ public class PersonnageService {
 	}
 	
 
-	public void create(Personnage personnage) {
+	public Personnage create(Personnage personnage) {
 		if (personnage.getNom() == null || personnage.getNom().isEmpty()) {
 			throw new PersonnageException();
 		}
-		personnageRepository.save(personnage);
+		return personnageRepository.save(personnage);
 	}
 
 	public Personnage update(Personnage personnage) {
@@ -62,6 +62,13 @@ public class PersonnageService {
 	public void deleteById(Long id) {
 		personnageRepository.deleteById(id);  //A voir --> suppression des attributs du personnage
 	}
-
+	
+	public void deleteByNom(String nom) {
+		personnageRepository.deleteByNom(nom);  
+	}
+	
+	public void deleteByPrenom(String prenom) {
+		personnageRepository.deleteByPrenom(prenom);  
+	}
 }
 

@@ -20,5 +20,9 @@ public interface CompteRepository extends JpaRepository <Compte, Long>{
 
 	@Query("select j from Joueur j left join fetch j.personnages where j.id=:id")
 	Optional<Joueur> findByIdWithPersonnages(@Param("id") Long id);
+	
+	@Query ("delete j from Joueur j where j.pseudo =: pseudo")
+	Optional<Joueur> deleteByPseudoJoueur(String pseudo);
+	
 }
 

@@ -60,6 +60,10 @@ public class CompteService {
 	public void deleteByIdJoueur(Long id) {
 		compteRepository.deleteById(id);
 	}
+	
+	public void deleteByPseudoJoueur(String pseudo) {
+		compteRepository.deleteByPseudoJoueur(pseudo);
+	}
 
 	
 }

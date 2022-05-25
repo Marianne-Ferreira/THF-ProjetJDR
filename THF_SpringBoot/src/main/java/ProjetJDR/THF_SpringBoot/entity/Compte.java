@@ -7,14 +7,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @MappedSuperclass
 public abstract class Compte {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqCompte")
+	@JsonView(JsonViews.Common.class)
 	protected Long id;
+	@JsonView(JsonViews.Common.class)
 	protected String login;
 	protected String password;
+	@JsonView(JsonViews.Common.class)
 	protected String nom; 
+	@JsonView(JsonViews.Common.class)
 	protected String prenom;
  
 	public Compte() {

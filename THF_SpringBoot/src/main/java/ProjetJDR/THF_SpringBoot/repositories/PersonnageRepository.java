@@ -22,4 +22,10 @@ public interface PersonnageRepository extends JpaRepository <Personnage, Long>{
 	
 	@Query("select p from Personnage p left join fetch p.metier where p.metier=:metier")
 	Optional<Personnage> findPersonnageByMetier(@Param("metier") Metier metier);
+
+	@Query("delete p from Personnage p where p.nom =:nom")
+	Optional<Personnage> deleteByNom(String nom);
+	
+	@Query("delete p from Personnage p where p.prenom =:prenom")
+	Optional<Personnage> deleteByPrenom(String prenom);
 }
