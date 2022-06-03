@@ -77,4 +77,9 @@ public class CompteService implements UserDetailsService{
 	}
 
 	
+	public boolean checkLoginExist(String login) {
+		return compteRepository.findByPseudo(login).isPresent();
+	}
+	
+	
 }
