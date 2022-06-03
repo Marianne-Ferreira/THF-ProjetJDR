@@ -2,6 +2,8 @@ package ProjetJDR.THF_SpringBoot.services;
 
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -62,7 +64,7 @@ public class CompteService implements UserDetailsService {
 	public void delete(Compte compte) {
 		compteRepository.delete(compte);
 	}
-
+	//@RolesAllowed("Joueur")
 	public void deleteByIdJoueur(Long id) {
 		compteRepository.deleteById(id);
 	}

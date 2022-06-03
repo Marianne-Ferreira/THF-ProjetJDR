@@ -4,11 +4,13 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
 
+import javax.annotation.security.RolesAllowed;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -24,8 +26,10 @@ public abstract class Compte implements UserDetails{
 	protected Long id;
 	@NotEmpty
 	@JsonView(JsonViews.Common.class)
+	@Size(min=3)
 	protected String login;
 	@NotEmpty
+	@Size(min=6)
 	protected String password;
 	@NotEmpty
 	@JsonView(JsonViews.Common.class)
