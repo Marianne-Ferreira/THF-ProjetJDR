@@ -3,6 +3,7 @@ package ProjetJDR.THF_SpringBoot.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import ProjetJDR.THF_SpringBoot.entity.Metier;
@@ -20,28 +21,39 @@ public class PersonnageService {
 	}
 
 	public Personnage getById(Long id) {
-		return personnageRepository.findById(id).orElseThrow(PersonnageException::new);
+		return personnageRepository.findById(id).orElseThrow(() -> {
+			throw new PersonnageException("Veuillez insérer un Id existant");
+		});
 	}
 
 	public Personnage getByPrenom(String prenom) {
-		return personnageRepository.findByPrenom(prenom).orElseThrow(PersonnageException::new);
+		return personnageRepository.findByPrenom(prenom).orElseThrow(() -> {
+			throw new PersonnageException("Prénom introuvable");
+		});
 	}
 
 	public Personnage getByNom(String nom) {
-		return personnageRepository.findByNom(nom).orElseThrow(PersonnageException::new);
+		return personnageRepository.findByNom(nom).orElseThrow(() -> {
+			throw new PersonnageException("Nom introuvable");
+		});
+
 	}
 
 	public Personnage getByIdWithStuff(Long id) {
-		return personnageRepository.findByIdWithStuff(id).orElseThrow(PersonnageException::new);
+		return personnageRepository.findByIdWithStuff(id).orElseThrow(() -> {
+			throw new PersonnageException("Veuillez insérer un Id existant");
+		});
 
 	}
-	
-	//Retourne tous les personnages dont le metier est celui indiqué par l'utilisateur
+
+	// Retourne tous les personnages dont le metier est celui indiqué par
+	// l'utilisateur
 	public Personnage getPersonnageByMetier(Metier metier) {
-		return personnageRepository.findPersonnageByMetier(metier).orElseThrow(PersonnageException::new);
+		return personnageRepository.findPersonnageByMetier(metier).orElseThrow(() -> {
+			throw new PersonnageException("Veuillez insérer un Id existant");
+		});
 
 	}
-	
 
 	public Personnage create(Personnage personnage) {
 		if (personnage.getNom() == null || personnage.getNom().isEmpty()) {
@@ -58,17 +70,15 @@ public class PersonnageService {
 		personnageRepository.delete(personnage);
 	}
 
-	
 	public void deleteById(Long id) {
-		personnageRepository.deleteById(id);  //A voir --> suppression des attributs du personnage
+		personnageRepository.deleteById(id); // A voir --> suppression des attributs du personnage
 	}
-	
+
 	public void deleteByNom(String nom) {
-		personnageRepository.deleteByNom(nom);  
+		personnageRepository.deleteByNom(nom);
 	}
-	
+
 	public void deleteByPrenom(String prenom) {
-		personnageRepository.deleteByPrenom(prenom);  
+		personnageRepository.deleteByPrenom(prenom);
 	}
 }
-

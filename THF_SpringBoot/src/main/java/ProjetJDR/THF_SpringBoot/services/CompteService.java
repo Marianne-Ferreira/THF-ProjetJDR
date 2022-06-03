@@ -7,14 +7,16 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import ProjetJDR.THF_SpringBoot.entity.Compte;
 import ProjetJDR.THF_SpringBoot.entity.Joueur;
+import ProjetJDR.THF_SpringBoot.exceptions.BoutiqueException;
 import ProjetJDR.THF_SpringBoot.repositories.CompteRepository;
 
+
 @Service
-public class CompteService implements UserDetailsService{
-	
+public class CompteService implements UserDetailsService {
 
 	@Autowired
 	private CompteRepository compteRepository;
@@ -64,9 +66,20 @@ public class CompteService implements UserDetailsService{
 	public void deleteByIdJoueur(Long id) {
 		compteRepository.deleteById(id);
 	}
-	
+
 	public void deleteByPseudoJoueur(String pseudo) {
 		compteRepository.deleteByPseudoJoueur(pseudo);
+	}
+
+	public Compte getByLogin(String login) {
+		return compteRepository.findByLogin(login).orElseThrow(() -> {
+			throw new BoutiqueException("Login indisponible");
+		});
+
+	}
+
+	public boolean checkLoginExist(String login) {
+		return compteRepository.findByLogin(login).isPresent();
 	}
 
 	@Override
@@ -76,5 +89,4 @@ public class CompteService implements UserDetailsService{
 		});
 	}
 
-	
 }
