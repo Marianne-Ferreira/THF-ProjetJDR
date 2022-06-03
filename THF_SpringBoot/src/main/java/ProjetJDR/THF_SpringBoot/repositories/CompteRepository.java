@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import ProjetJDR.THF_SpringBoot.entity.Admin;
 import ProjetJDR.THF_SpringBoot.entity.Compte;
 import ProjetJDR.THF_SpringBoot.entity.Joueur;
 
@@ -27,6 +28,9 @@ public interface CompteRepository extends JpaRepository <Compte, Long>{
 	
 	@Query ("delete j from Joueur j where j.pseudo =: pseudo")
 	Optional<Joueur> deleteByPseudoJoueur(String pseudo);
+	
+	@Query ("delete j from Joueur j where j.pseudo =: pseudo")
+	Optional<Admin> deleteByAdmin(String admin);
 	
 }
 

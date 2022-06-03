@@ -56,6 +56,16 @@ public class CompteRestController {
 	public Compte create(@RequestBody Compte compte) {
 		return compteService.create(compte);
 	}
+	
+	@JsonView(JsonViews.Common.class)
+	@PreAuthorize("isAnonymous()")
+	@PostMapping("/inscription")
+	public Compte create(@RequestBody Joueur joueur) {
+		if(compteService.checkLoginExist(compte.getLogin())) {
+			throw new ResponseStatusException(HttpStatus.CONFLICT);
+		}
+		return compteService.create(compte);
+	}
 
 }
 //Il ne nous manque pas l'option se connecter ? Pour joueur comme pur admin ? 
