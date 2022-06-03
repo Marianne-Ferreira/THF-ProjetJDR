@@ -17,23 +17,34 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 @SequenceGenerator(name="seqPersonnage", sequenceName = "seq_personnage", initialValue = 1, allocationSize = 1)
 public class Personnage {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "seqPersonnage")
+	@JsonView(JsonViews.Common.class)
 	private Long id;
+	@JsonView(JsonViews.Common.class)
 	private double gold;
+	@JsonView(JsonViews.Common.class)
 	private String nom; //Nom du PERSONNAGE et pas du joueur
+	@JsonView(JsonViews.Common.class)
 	private String prenom; //Prenom du PERSONNAGE et pas du joueur
+	@JsonView(JsonViews.Common.class)
 	private int age;
+	@JsonView(JsonViews.Common.class)
 	@Enumerated(EnumType.STRING)
 	private Genre genre;
+	@JsonView(JsonViews.Common.class)
 	@Enumerated(EnumType.STRING)
 	private Alignement alignement; 
+	@JsonView(JsonViews.Common.class)
 	@Enumerated(EnumType.STRING)
 	private Race race;
+	@JsonView(JsonViews.Common.class)
 	@Embedded
 	@AttributeOverrides({ @AttributeOverride(name = "id", column = @Column(name = "id_carac")),
 		@AttributeOverride(name = "force", column = @Column(name = "force_carac")),
@@ -43,12 +54,10 @@ public class Personnage {
 		@AttributeOverride(name = "intelligence", column = @Column(name = "intelligence_carac")),
 		@AttributeOverride(name = "constitution", column = @Column(name = "constitution_carac")) })
 	private Caracteristiques caracteristiques;
+	@JsonView(JsonViews.Common.class)
 	@Embedded
-	//@AttributeOverrides({ @AttributeOverride(name = "?", column = @Column(name = "?)),
-			//@AttributeOverride(name = "rue", column = @Column(name = "person_street")),
-			//@AttributeOverride(name = "codePostal", column = @Column(name = "person_zip_code")),
-			//@AttributeOverride(name = "ville", column = @Column(name = "person_city")) })
 	private Stats stats;
+	@JsonView(JsonViews.PersonnageWithStuff.class)
 	@Embedded
 	@AttributeOverrides({ @AttributeOverride(name = "id", column = @Column(name = "id_stuff")),
 			@AttributeOverride(name = "quantite", column = @Column(name = "quantite_stuff")) })
@@ -63,6 +72,7 @@ public class Personnage {
 			@AttributeOverride(name = "lead_tech", column = @Column(name = "lead_tech_metier")),
 			@AttributeOverride(name = "business_analyst", column = @Column(name = "business_analyst_metier")),
 			@AttributeOverride(name = "product_owner", column = @Column(name = "product_owner_metier")) })
+	@JsonView(JsonViews.Common.class)
 	@OneToOne
 	@JoinColumn(name = "metier_id", foreignKey = @ForeignKey(name="personnage_metier_id_fk"))
 	private Metier metier;

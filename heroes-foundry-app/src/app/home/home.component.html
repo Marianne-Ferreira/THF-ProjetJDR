@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-center">
+  <h1 class="line anim-typewriter">The Heroes Foundry</h1>
+  <!--<img  class="banner" src="../assets/Heroes_Foundy_Logo_sans_fond.png"/>-->
+</div>
+
+<form>
+  <div class="mb-3 d-flex justify-content-center">
+    <input class="user-input" type="text" placeholder="{{login}}">
+  </div>
+  <div class="mb-3 d-flex justify-content-center">
+    <input type="password" class="user-input" type="text" placeholder="{{password}}">
+  </div>
+  <div class="mb-3 d-flex justify-content-center">
+  <a class="user-go d-flex justify-content-center p-3" routerLink="/home-user" routerLinkActive="active">{{submit}}</a>
+  </div>
+
+  <div class="col d-flex justify-content-center">
+    <div class="col-2 form-check form-switch">
+      <input class="override-form-check-input form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+      <label class="mr-3 form-check-label simpl-white" for="flexSwitchCheckDefault">{{stay}}</label>
+    </div>
+    <a class="simpl-white" routerLink="/mdp-oublie" routerLinkActive="active">{{password_forgot}}</a>
+  </div>
+
+  <div class="my-3 d-flex justify-content-center">
+    <a class="user-create d-flex justify-content-center p-3" routerLink="/create-account" routerLinkActive="active">Créer un compte</a>
+  </div>
+
+</form>
+
+

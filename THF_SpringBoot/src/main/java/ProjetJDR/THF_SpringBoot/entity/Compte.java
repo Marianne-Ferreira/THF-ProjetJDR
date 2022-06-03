@@ -1,20 +1,37 @@
 package ProjetJDR.THF_SpringBoot.entity;
 
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Objects;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotEmpty;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.fasterxml.jackson.annotation.JsonView;
 
 @MappedSuperclass
-public abstract class Compte {
+public abstract class Compte implements UserDetails{
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqCompte")
+	@JsonView(JsonViews.Common.class)
 	protected Long id;
+	@NotEmpty
+	@JsonView(JsonViews.Common.class)
 	protected String login;
+	@NotEmpty
 	protected String password;
+	@NotEmpty
+	@JsonView(JsonViews.Common.class)
 	protected String nom; 
+	@NotEmpty
+	@JsonView(JsonViews.Common.class)
 	protected String prenom;
  
 	public Compte() {
@@ -76,6 +93,31 @@ public abstract class Compte {
 			return false;
 		Compte other = (Compte) obj;
 		return Objects.equals(id, other.id);
+	}
+	
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return Arrays.asList(new SimpleGrantedAuthority("ROLE_" + this.getClass().getSimpleName().toUpperCase()));
+	}
+	@Override
+	public String getUsername() {
+		return login;
+	}
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+	@Override
+	public boolean isEnabled() {
+		return true;
 	}
 	
 	

@@ -3,6 +3,9 @@ package ProjetJDR.THF_SpringBoot.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import ProjetJDR.THF_SpringBoot.entity.Compte;
@@ -10,7 +13,8 @@ import ProjetJDR.THF_SpringBoot.entity.Joueur;
 import ProjetJDR.THF_SpringBoot.repositories.CompteRepository;
 
 @Service
-public class CompteService {
+public class CompteService implements UserDetailsService{
+	
 
 	@Autowired
 	private CompteRepository compteRepository;
@@ -59,6 +63,17 @@ public class CompteService {
 
 	public void deleteByIdJoueur(Long id) {
 		compteRepository.deleteById(id);
+	}
+	
+	public void deleteByPseudoJoueur(String pseudo) {
+		compteRepository.deleteByPseudoJoueur(pseudo);
+	}
+
+	@Override
+	public UserDetails loadUserByUsername(String pseudo) throws UsernameNotFoundException {
+		return compteRepository.findByPseudo(pseudo).orElseThrow(() -> {
+			throw new UsernameNotFoundException("Pseudo introuvable");
+		});
 	}
 
 	

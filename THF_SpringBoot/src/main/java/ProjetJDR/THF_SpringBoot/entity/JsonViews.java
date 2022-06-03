@@ -21,6 +21,10 @@ public class JsonViews {
 		public static class EquipementFromBoutique extends Common {
 
 		}
+		
+		public static class PersonnageWithStuff extends JoueurWithPersonnages{
+			
+		}
 
 	}
 
