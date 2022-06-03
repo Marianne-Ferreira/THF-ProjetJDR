@@ -1,5 +1,6 @@
 package ProjetJDR.THF_SpringBoot.entity;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -7,8 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotEmpty;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonView;
@@ -19,11 +22,15 @@ public abstract class Compte implements UserDetails{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqCompte")
 	@JsonView(JsonViews.Common.class)
 	protected Long id;
+	@NotEmpty
 	@JsonView(JsonViews.Common.class)
 	protected String login;
+	@NotEmpty
 	protected String password;
+	@NotEmpty
 	@JsonView(JsonViews.Common.class)
 	protected String nom; 
+	@NotEmpty
 	@JsonView(JsonViews.Common.class)
 	protected String prenom;
  
@@ -90,32 +97,26 @@ public abstract class Compte implements UserDetails{
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
+		return Arrays.asList(new SimpleGrantedAuthority("ROLE_" + this.getClass().getSimpleName().toUpperCase()));
 	}
 	@Override
 	public String getUsername() {
-		// TODO Auto-generated method stub
-		return null;
+		return login;
 	}
 	@Override
 	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 	@Override
 	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 	@Override
 	public boolean isEnabled() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 	

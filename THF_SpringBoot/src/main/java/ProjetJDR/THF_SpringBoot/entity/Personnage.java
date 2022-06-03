@@ -56,10 +56,6 @@ public class Personnage {
 	private Caracteristiques caracteristiques;
 	@JsonView(JsonViews.Common.class)
 	@Embedded
-	//@AttributeOverrides({ @AttributeOverride(name = "?", column = @Column(name = "?)),
-			//@AttributeOverride(name = "rue", column = @Column(name = "person_street")),
-			//@AttributeOverride(name = "codePostal", column = @Column(name = "person_zip_code")),
-			//@AttributeOverride(name = "ville", column = @Column(name = "person_city")) })
 	private Stats stats;
 	@JsonView(JsonViews.PersonnageWithStuff.class)
 	@Embedded
