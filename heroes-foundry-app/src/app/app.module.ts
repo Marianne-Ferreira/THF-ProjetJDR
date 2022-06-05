@@ -12,6 +12,10 @@ import { AProposComponent } from './a-propos/a-propos.component';
 import { PasswordForgotComponent } from './password-forgot/password-forgot.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { HomeAdminComponent } from './home-admin/home-admin.component';
+import { ListeUserComponent } from './liste-user/liste-user.component';
+import { GestionBoutiqueComponent } from './gestion-boutique/gestion-boutique.component';
+import { PersonnageUserComponent } from './personnage-user/personnage-user.component';
 
 @NgModule({ //Déclaration des modules auprès d'Angular
   declarations: [
@@ -21,7 +25,11 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     AProposComponent,
     PasswordForgotComponent,
     HomeUserComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    HomeAdminComponent,
+    ListeUserComponent,
+    GestionBoutiqueComponent,
+    PersonnageUserComponent
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule,RouterModule.forRoot(routes)],
   //routermodule pour diriger vers des pages
