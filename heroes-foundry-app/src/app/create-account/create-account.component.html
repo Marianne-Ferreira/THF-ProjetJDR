@@ -24,7 +24,7 @@
       <input class="user-input" formControlName="prenom" placeholder="Prenom"><p *ngIf="monForm.get('prenom')" ></p>
       <input class="user-input" formControlName="mail" placeholder="Adresse mail"><p *ngIf="monForm.get('mail')" ></p>
       <input class="user-input" formControlName="password" placeholder="Mot de passe"><p *ngIf="monForm.get('mdp')" ></p>
-      <button class="user-create" type="submit" [disabled]="monForm.invalid">Créer un compte</button>
+      <button class="user-create" type="submit" [disabled]="monForm.invalid" routerLink="/home-user" routerLinkActive="active">Créer un compte</button>
     </form>
   </div>
 </div>

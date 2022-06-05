@@ -16,6 +16,9 @@ import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { ListeUserComponent } from './liste-user/liste-user.component';
 import { GestionBoutiqueComponent } from './gestion-boutique/gestion-boutique.component';
 import { PersonnageUserComponent } from './personnage-user/personnage-user.component';
+import { DisplayStuffComponent } from './display-stuff/display-stuff.component';
+import { CreateStuffComponent } from './create-stuff/create-stuff.component';
+import { DisplayPersonnageComponent } from './display-personnage/display-personnage.component';
 
 @NgModule({ //Déclaration des modules auprès d'Angular
   declarations: [
@@ -29,7 +32,10 @@ import { PersonnageUserComponent } from './personnage-user/personnage-user.compo
     HomeAdminComponent,
     ListeUserComponent,
     GestionBoutiqueComponent,
-    PersonnageUserComponent
+    PersonnageUserComponent,
+    DisplayStuffComponent,
+    CreateStuffComponent,
+    DisplayPersonnageComponent
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule,RouterModule.forRoot(routes)],
   //routermodule pour diriger vers des pages

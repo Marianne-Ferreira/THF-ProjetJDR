@@ -1,3 +1,4 @@
+import { DisplayStuffComponent } from './display-stuff/display-stuff.component';
 import { PersonnageUserComponent } from './personnage-user/personnage-user.component';
 import { GestionBoutiqueComponent } from './gestion-boutique/gestion-boutique.component';
 import { ListeUserComponent } from './liste-user/liste-user.component';
@@ -15,7 +16,10 @@ export const routes: Routes =[
   {path: 'liste-user', component : ListeUserComponent},
   {path: 'personnage-user', component : PersonnageUserComponent},
   {path: 'gestion-boutique', component : GestionBoutiqueComponent},
+  {path: 'display-stuff', component : DisplayStuffComponent},
+  {path: 'create-stuff', component : CreateAccountComponent},
   {path: 'home-user', component: HomeUserComponent},
+  {path: 'display-personnage', component: DisplayStuffComponent},
   {path: 'a-propos', component: AProposComponent},
   {path: 'mdp-oublie', component : PasswordForgotComponent},
   {path: 'create-account', component : CreateAccountComponent},
