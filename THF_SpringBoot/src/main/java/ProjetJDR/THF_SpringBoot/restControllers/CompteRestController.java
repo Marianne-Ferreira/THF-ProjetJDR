@@ -76,6 +76,7 @@ import org.springframework.web.server.ResponseStatusException;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import ProjetJDR.THF_SpringBoot.entity.Compte;
+import ProjetJDR.THF_SpringBoot.entity.Joueur;
 import ProjetJDR.THF_SpringBoot.entity.JsonViews;
 import ProjetJDR.THF_SpringBoot.services.CompteService;
 
