@@ -13,7 +13,7 @@ export class BoutiqueService {
   constructor(private httpClient : HttpClient) { }
 
   getAll() : Observable<Boutique[]>{
-		return this.httpClient.get<Boutique[]>(this.url);
+		return this.httpClient.get<Boutique[]>(this.url + '/gestion');
 	}
 
   create(boutique : Boutique) {
@@ -24,21 +24,20 @@ export class BoutiqueService {
   }
 
   update(boutique: Boutique): Observable<Boutique> {
-    return this.httpClient.put<Boutique>(`${this.url}/${boutique.libelle}`, boutique);
+    return this.httpClient.put<Boutique>(`${this.url}/${boutique.nomStuff}`, boutique);
   }
 
   delete(boutique : Boutique) : Observable<void> {
-    return this.httpClient.delete<void>(`${this.url}/${boutique.libelle}`, boutique);
+    return this.httpClient.delete<void>(`${this.url}/${boutique.nomStuff}`, boutique);
 
 
 
 
 	//CONSOMMABLES
 
-  getAll() : Observable<Consommables>{
-		return this.httpClient.get<Consommables>(this.url);
+  getAll() : Observable<Consommables[]>{
+		return this.httpClient.get<Consommables[]>(`${this.url}/${}`;
 	}
-
 
 
 	public Consommables getByIdConsommables(Long id) { // Ici on prend l'un des items present dans la boutique via son id
