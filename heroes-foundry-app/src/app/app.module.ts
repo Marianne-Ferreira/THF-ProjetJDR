@@ -19,6 +19,7 @@ import { PersonnageUserComponent } from './personnage-user/personnage-user.compo
 import { DisplayStuffComponent } from './display-stuff/display-stuff.component';
 import { CreateStuffComponent } from './create-stuff/create-stuff.component';
 import { DisplayPersonnageComponent } from './display-personnage/display-personnage.component';
+import { CaracPersonnageComponent } from './carac-personnage/carac-personnage.component';
 
 @NgModule({ //Déclaration des modules auprès d'Angular
   declarations: [
@@ -36,6 +37,8 @@ import { DisplayPersonnageComponent } from './display-personnage/display-personn
     DisplayStuffComponent,
     CreateStuffComponent,
     DisplayPersonnageComponent
+    CreateAccountComponent,
+    CaracPersonnageComponent
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule,RouterModule.forRoot(routes)],
   //routermodule pour diriger vers des pages

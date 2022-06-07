@@ -1,0 +1,140 @@
+<div class="row p-3">
+  <div class="col-3">
+    <div class="card card-hover">
+      <div class="card-body">
+        <h5 class="card-title d-flex justify-content-center">Card title</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 cards">
+    <div class="card card-hover">
+      <div class="card-body">
+        <h5 class="card-title d-flex justify-content-center">Card title</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 cards">
+    <div class="card card-hover">
+      <div class="card-body">
+        <h5 class="card-title d-flex justify-content-center">Card title</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-3 cards">
+    <div class="card card-hover">
+      <div class="card-body">
+        <h5 class="card-title d-flex justify-content-center">Card title</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-4 row p-3 d-flex justify-content-center">
+  <div class="col-6 d-flex justify-content-center">
+    <p>
+      Vous avez <span id="totalPoints">{{ totalPointsResult }}</span> points à
+      répartir entre vos valeurs de caractéritiques. Le prix de chaque valeur de
+      caractéristique est indiqué dans la table ci-dessous :
+    </p>
+  </div>
+</div>
+<div class="row d-flex justify-content-center">
+  <div class="col-3">
+    <label>FORCE</label>
+    <input
+      [ngModel]="forceValue"
+      (ngModelChange)="forceValueChange($event)"
+      type="number"
+      min="8"
+      max="15"
+      value="8"
+    />
+    <input type="button" value="Ok" id="forceValue" />
+  </div>
+
+  <div class="col-3">
+    <label>CHARISME</label>
+    <input
+      [ngModel]="charismeValue"
+      (ngModelChange)="charismeValueChange($event)"
+      type="number"
+      min="8"
+      max="15"
+      value="8"
+    />
+    <input type="button" value="Ok" id="charismeValue" />
+  </div>
+
+  <div class="col-3">
+    <label>SAGESSE</label>
+    <input
+      [ngModel]="sagesseValue"
+      (ngModelChange)="sagesseValueChange($event)"
+      type="number"
+      min="8"
+      max="15"
+      value="8"
+    />
+    <input type="button" value="Ok" id="sagesseValue" />
+  </div>
+
+  <div class="col-3">
+    <label>INTELLIGENCE</label>
+    <input
+      [ngModel]="intelligenceValue"
+      (ngModelChange)="intelligenceValueChange($event)"
+      type="number"
+      min="8"
+      max="15"
+      value="8"
+    />
+    <input type="button" value="Ok" id="intelligenceValue" />
+  </div>
+
+  <div class="col-3">
+    <label>DEXTERITE</label>
+    <input
+      [ngModel]="dexteriteValue"
+      (ngModelChange)="dexteriteValueChange($event)"
+      type="number"
+      min="8"
+      max="15"
+      value="8"
+    />
+    <input type="button" value="Ok" id="dexteriteValue" />
+  </div>
+
+  <div class="col-3">
+    <label>CONSTITUTION</label>
+    <input
+      [ngModel]="constitutionValue"
+      (ngModelChange)="constitutionValueChange($event)"
+      type="number"
+      min="8"
+      max="15"
+      value="8"
+    />
+    <input type="button" value="Ok" id="constitutionValue" />
+  </div>
+</div>
+
+<!-- <script src="script.js"></script>
+  </body>
+</html> -->
