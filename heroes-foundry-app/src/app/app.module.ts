@@ -12,6 +12,7 @@ import { AProposComponent } from './a-propos/a-propos.component';
 import { PasswordForgotComponent } from './password-forgot/password-forgot.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { CaracPersonnageComponent } from './carac-personnage/carac-personnage.component';
 
 @NgModule({ //Déclaration des modules auprès d'Angular
   declarations: [
@@ -21,7 +22,8 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     AProposComponent,
     PasswordForgotComponent,
     HomeUserComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    CaracPersonnageComponent
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule,RouterModule.forRoot(routes)],
   //routermodule pour diriger vers des pages
