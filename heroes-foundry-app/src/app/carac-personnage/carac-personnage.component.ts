@@ -44,6 +44,7 @@ export class CaracPersonnageComponent implements OnInit {
           this.totalPointsConstitution);
     } else {
       this.forceValue--;
+      this.totalPointsResult++;
     }
     console.log(this.totalPointsForce + '/' + this.totalPointsResult);
   }
@@ -68,6 +69,7 @@ export class CaracPersonnageComponent implements OnInit {
           this.totalPointsConstitution);
     } else {
       this.charismeValue--;
+      this.totalPointsResult++;
     }
     console.log(this.totalPointsCharisme + '/' + this.totalPointsResult);
   }
@@ -92,6 +94,7 @@ export class CaracPersonnageComponent implements OnInit {
           this.totalPointsConstitution);
     } else {
       this.sagesseValue--;
+      this.totalPointsResult++;
     }
     console.log(this.totalPointsSagesse + '/' + this.totalPointsResult);
   }
@@ -116,6 +119,7 @@ export class CaracPersonnageComponent implements OnInit {
           this.totalPointsConstitution);
     } else {
       this.intelligenceValue--;
+      this.totalPointsResult++;
     }
     console.log(this.totalPointsIntelligence + '/' + this.totalPointsResult);
   }
@@ -140,6 +144,7 @@ export class CaracPersonnageComponent implements OnInit {
           this.totalPointsConstitution);
     } else {
       this.dexteriteValue--;
+      this.totalPointsResult++;
     }
     console.log(this.totalPointsDexterite + '/' + this.totalPointsResult);
   }
@@ -164,6 +169,7 @@ export class CaracPersonnageComponent implements OnInit {
           this.totalPointsConstitution);
     } else {
       this.constitutionValue--;
+      this.totalPointsResult++;
     }
     console.log(this.totalPointsConstitution + '/' + this.totalPointsResult);
   }
