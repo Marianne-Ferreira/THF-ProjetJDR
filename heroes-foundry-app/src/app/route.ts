@@ -1,3 +1,5 @@
+import { MetierPersonnageComponent } from './metier-personnage/metier-personnage.component';
+import { RacePersonnageComponent } from './race-personnage/race-personnage.component';
 import { GenrePersonnageComponent } from './genre-personnage/genre-personnage.component';
 import { NomPersonnageComponent } from './nom-personnage/nom-personnage.component';
 import { CaracPersonnageComponent } from './carac-personnage/carac-personnage.component';
@@ -24,6 +26,8 @@ export const routes: Routes = [
   { path: 'home-user', component: HomeUserComponent },
   { path: 'nom-personnage', component: NomPersonnageComponent },
   { path: 'genre-personnage', component: GenrePersonnageComponent },
+  { path: 'race-personnage', component: RacePersonnageComponent },
+  { path: 'metier-personnage', component: MetierPersonnageComponent },
   { path: 'display-personnage', component: DisplayStuffComponent },
   { path: 'carac-personnage', component: CaracPersonnageComponent },
   { path: 'a-propos', component: AProposComponent },

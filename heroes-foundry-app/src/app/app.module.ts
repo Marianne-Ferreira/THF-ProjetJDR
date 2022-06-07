@@ -22,6 +22,8 @@ import { DisplayPersonnageComponent } from './display-personnage/display-personn
 import { CaracPersonnageComponent } from './carac-personnage/carac-personnage.component';
 import { NomPersonnageComponent } from './nom-personnage/nom-personnage.component';
 import { GenrePersonnageComponent } from './genre-personnage/genre-personnage.component';
+import { RacePersonnageComponent } from './race-personnage/race-personnage.component';
+import { MetierPersonnageComponent } from './metier-personnage/metier-personnage.component';
 
 @NgModule({
   //Déclaration des modules auprès d'Angular
@@ -44,6 +46,8 @@ import { GenrePersonnageComponent } from './genre-personnage/genre-personnage.co
     CaracPersonnageComponent,
     NomPersonnageComponent,
     GenrePersonnageComponent,
+    RacePersonnageComponent,
+    MetierPersonnageComponent,
   ],
   imports: [
     BrowserModule,
