@@ -1,3 +1,6 @@
+import { StuffPersonnageComponent } from './stuff-personnage/stuff-personnage.component';
+import { AlignementPersonnageComponent } from './alignement-personnage/alignement-personnage.component';
+import { CompetencePersonnageComponent } from './competence-personnage/competence-personnage.component';
 import { MetierPersonnageComponent } from './metier-personnage/metier-personnage.component';
 import { RacePersonnageComponent } from './race-personnage/race-personnage.component';
 import { GenrePersonnageComponent } from './genre-personnage/genre-personnage.component';
@@ -30,6 +33,9 @@ export const routes: Routes = [
   { path: 'metier-personnage', component: MetierPersonnageComponent },
   { path: 'display-personnage', component: DisplayStuffComponent },
   { path: 'carac-personnage', component: CaracPersonnageComponent },
+  { path: 'competence-personnage', component: CompetencePersonnageComponent },
+  { path: 'alignement-personnage', component: AlignementPersonnageComponent },
+  { path: 'stuff-personnage', component: StuffPersonnageComponent },
   { path: 'a-propos', component: AProposComponent },
   { path: 'mdp-oublie', component: PasswordForgotComponent },
   { path: 'create-account', component: CreateAccountComponent },

@@ -24,6 +24,9 @@ import { NomPersonnageComponent } from './nom-personnage/nom-personnage.componen
 import { GenrePersonnageComponent } from './genre-personnage/genre-personnage.component';
 import { RacePersonnageComponent } from './race-personnage/race-personnage.component';
 import { MetierPersonnageComponent } from './metier-personnage/metier-personnage.component';
+import { CompetencePersonnageComponent } from './competence-personnage/competence-personnage.component';
+import { AlignementPersonnageComponent } from './alignement-personnage/alignement-personnage.component';
+import { StuffPersonnageComponent } from './stuff-personnage/stuff-personnage.component';
 
 @NgModule({
   //Déclaration des modules auprès d'Angular
@@ -48,6 +51,9 @@ import { MetierPersonnageComponent } from './metier-personnage/metier-personnage
     GenrePersonnageComponent,
     RacePersonnageComponent,
     MetierPersonnageComponent,
+    CompetencePersonnageComponent,
+    AlignementPersonnageComponent,
+    StuffPersonnageComponent,
   ],
   imports: [
     BrowserModule,
