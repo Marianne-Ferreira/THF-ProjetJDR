@@ -8,119 +8,247 @@ import { Component, OnInit, NgModule } from '@angular/core';
 export class CaracPersonnageComponent implements OnInit {
   totalPointsResult = 27;
   forceValue = '';
+  charismeValue = '';
+  sagesseValue = '';
+  intelligenceValue = '';
+  dexteriteValue = '';
+  constitutionValue = '';
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  forceValueChange(value: 15) {
-    console.log(value);
-    console.log(this.totalPointsResult);
-    this.totalPointsResult = this.totalPointsResult - 9;
+  forceValueChange(value: any) {
+    if ((value = 15)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 9;
+    } else if ((value = 14)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 7;
+    } else if ((value = 13)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 5;
+    } else if ((value = 12)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 4;
+    } else if ((value = 11)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 3;
+    } else if ((value = 10)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 2;
+    } else if ((value = 9)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 1;
+    } else if ((value = 8)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 0;
+    } else {
+      this.totalPointsResult = this.totalPointsResult;
+      //Afficher message d'erreur
+    }
   }
 
-  //     if (valeur == 15) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 9;
-  //         totalPointsResult = totalPointsResult - 9;
-  //     } else if (valeur == 14) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 7;
-  //         totalPointsResult = totalPointsResult - 7;
-  //     } else if (valeur == 13) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 5;
-  //         totalPointsResult = totalPointsResult - 5;
-  //     } else if (valeur == 12) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 4;
-  //         totalPointsResult = totalPointsResult - 4;
-  //     } else if (valeur == 11) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 3;
-  //         totalPointsResult = totalPointsResult - 3;
-  //     } else if (valeur == 10) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 2;
-  //         totalPointsResult = totalPointsResult - 2;
-  //     } else if (valeur == 9) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 1;
-  //         totalPointsResult = totalPointsResult - 1;
-  //     } else if (valeur == 8) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 0;
-  //         totalPointsResult = totalPointsResult;
-  //     } else if (valeur >= 8 || valeur <= 15) {
-  //         window.alert('Veuillez rentrer une valeur comprise entre 8 et 15.');
-  //     }
-  // });
+  charismeValueChange(value: any) {
+    if ((value = 15)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 9;
+    } else if ((value = 14)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 7;
+    } else if ((value = 13)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 5;
+    } else if ((value = 12)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 4;
+    } else if ((value = 11)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 3;
+    } else if ((value = 10)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 2;
+    } else if ((value = 9)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 1;
+    } else if ((value = 8)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 0;
+    } else {
+      this.totalPointsResult = this.totalPointsResult;
+      //Afficher message d'erreur
+    }
+  }
 
-  // var charismeValue = document.getElementById('characCharisme');
-  // charismeValue.addEventListener('change', (e) => {
-  //     var valeur = e.target.value;
-  //     if (valeur == 15) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 9;
-  //         totalPointsResult = totalPointsResult - 9;
-  //     } else if (valeur == 14) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 7;
-  //         totalPointsResult = totalPointsResult - 7;
-  //     } else if (valeur == 13) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 5;
-  //         totalPointsResult = totalPointsResult - 5;
-  //     } else if (valeur == 12) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 4;
-  //         totalPointsResult = totalPointsResult - 4;
-  //     } else if (valeur == 11) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 3;
-  //         totalPointsResult = totalPointsResult - 3;
-  //     } else if (valeur == 10) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 2;
-  //         totalPointsResult = totalPointsResult - 2;
-  //     } else if (valeur == 9) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 1;
-  //         totalPointsResult = totalPointsResult - 1;
-  //     } else if (valeur == 8) {
-  //         document.getElementById('totalPoints').innerHTML = totalPointsResult - 0;
-  //         totalPointsResult = totalPointsResult;
-  //     } else if (valeur >= 8 || valeur <= 15) {
-  //         window.alert('Veuillez rentrer une valeur comprise entre 8 et 15.');
-  //     }
-  // });
+  sagesseValueChange(value: any) {
+    if ((value = 15)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 9;
+    } else if ((value = 14)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 7;
+    } else if ((value = 13)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 5;
+    } else if ((value = 12)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 4;
+    } else if ((value = 11)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 3;
+    } else if ((value = 10)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 2;
+    } else if ((value = 9)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 1;
+    } else if ((value = 8)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 0;
+    } else {
+      this.totalPointsResult = this.totalPointsResult;
+      //Afficher message d'erreur
+    }
+  }
 
-  // exemple switch -- il fonctionne pas, mais le modèle c'est ça
-  // var charismeValue = document.getElementById('characCharisme');
-  // charismeValue.addEventListener('change', (e) => {
-  //     var value = e.target.value;
-  //     console.log(value == 15, totalPointsResult);
-  //     switch (value) {
-  //         case 15:
-  //             document.getElementById('totalPoints').innerHTML = totalPointsResult - 9;
-  //             totalPointsResult = totalPointsResult - 9;
-  //             break;
-  //         case value == 14:
-  //             document.getElementById('totalPoints').innerHTML = totalPointsResult - 7;
-  //             totalPointsResult = totalPointsResult - 7;
-  //             break;
-  //         case value == 13:
-  //             document.getElementById('totalPoints').innerHTML = totalPointsResult - 5;
-  //             totalPointsResult = totalPointsResult - 5;
-  //             break;
-  //         case value == 12:
-  //             document.getElementById('totalPoints').innerHTML = totalPointsResult - 4;
-  //             totalPointsResult = totalPointsResult - 4;
-  //             break;
-  //         case value == 11:
-  //             document.getElementById('totalPoints').innerHTML = totalPointsResult - 3;
-  //             totalPointsResult = totalPointsResult - 3;
-  //             break;
-  //         case value == 10:
-  //             document.getElementById('totalPoints').innerHTML = totalPointsResult - 2;
-  //             totalPointsResult = totalPointsResult - 2;
-  //             break;
-  //         case value == 9:
-  //             document.getElementById('totalPoints').innerHTML = totalPointsResult - 1;
-  //             totalPointsResult = totalPointsResult - 1;
-  //             break;
-  //         case value == 8:
-  //             document.getElementById('totalPoints').innerHTML = totalPointsResult - 0
-  //             totalPointsResult = totalPointsResult;
-  //             break;
-  //         default:
-  //             console.log('Veuillez rentrer une valeur comprise entre 8 et 15.');
-  //             break;
-  //     }
-  // });
+  dexteriteValueChange(value: any) {
+    if ((value = 15)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 9;
+    } else if ((value = 14)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 7;
+    } else if ((value = 13)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 5;
+    } else if ((value = 12)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 4;
+    } else if ((value = 11)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 3;
+    } else if ((value = 10)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 2;
+    } else if ((value = 9)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 1;
+    } else if ((value = 8)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 0;
+    } else {
+      this.totalPointsResult = this.totalPointsResult;
+      //Afficher message d'erreur
+    }
+  }
+
+  intelligenceValueChange(value: any) {
+    if ((value = 15)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 9;
+    } else if ((value = 14)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 7;
+    } else if ((value = 13)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 5;
+    } else if ((value = 12)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 4;
+    } else if ((value = 11)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 3;
+    } else if ((value = 10)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 2;
+    } else if ((value = 9)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 1;
+    } else if ((value = 8)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 0;
+    } else {
+      this.totalPointsResult = this.totalPointsResult;
+      //Afficher message d'erreur
+    }
+  }
+
+  constitutionValueChange(value: any) {
+    if ((value = 15)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 9;
+    } else if ((value = 14)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 7;
+    } else if ((value = 13)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 5;
+    } else if ((value = 12)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 4;
+    } else if ((value = 11)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 3;
+    } else if ((value = 10)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 2;
+    } else if ((value = 9)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 1;
+    } else if ((value = 8)) {
+      console.log(value);
+      console.log(this.totalPointsResult);
+      this.totalPointsResult = this.totalPointsResult - 0;
+    } else {
+      this.totalPointsResult = this.totalPointsResult;
+      //Afficher message d'erreur
+    }
+  }
 }
