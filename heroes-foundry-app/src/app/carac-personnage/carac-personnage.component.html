@@ -1,9 +1,10 @@
 <div class="mt-4 row p-3 d-flex justify-content-center">
   <div class="col-6 d-flex justify-content-center">
     <p>
-      Vous avez <span id="totalPoints">{{ totalPointsResult }}</span> points à
-      répartir entre vos valeurs de caractéritiques. Le prix de chaque valeur de
-      caractéristique est indiqué dans la table ci-dessous :
+      Vous avez
+      <span style="color: white" id="totalPoints">{{ totalPointsResult }}</span>
+      points à répartir entre vos valeurs de caractéritiques. Le prix de chaque
+      valeur de caractéristique est indiqué dans la table ci-dessous :
     </p>
   </div>
 </div>
@@ -11,7 +12,7 @@
   <div class="col-3">
     <label>FORCE</label>
     <input
-      [ngModel]="forceValue"
+      [(ngModel)]="forceValue"
       (ngModelChange)="forceValueChange($event)"
       type="number"
       min="8"
