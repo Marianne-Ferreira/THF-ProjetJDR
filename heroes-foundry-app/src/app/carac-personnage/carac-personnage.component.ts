@@ -6,7 +6,7 @@ import { Component, OnInit, NgModule } from '@angular/core';
   styleUrls: ['./carac-personnage.component.css'],
 })
 export class CaracPersonnageComponent implements OnInit {
-  totalPointsResult = 4;
+  totalPointsResult = 27;
   totalPointsForce = 0;
   forceValue = 8;
   charismeValue = 8;
@@ -29,7 +29,7 @@ export class CaracPersonnageComponent implements OnInit {
     }
 
     if (this.totalPointsResult > 0) {
-      this.totalPointsResult = 4 - this.totalPointsForce;
+      this.totalPointsResult = 27 - this.totalPointsForce;
     } else {
       this.forceValue--;
     }
