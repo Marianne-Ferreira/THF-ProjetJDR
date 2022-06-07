@@ -1,3 +1,13 @@
+<div class="d-flex">
+  <img
+    class="col-4 d-flex justify-content-left align-items-center"
+    src="../assets/Heroes_Foundy_Logo_sans_fond.png"
+  />
+  <h2 class="col-8 d-flex justify-content-left align-items-center">
+    Définis tes caractéristiques !
+  </h2>
+</div>
+
 <div class="mt-4 row p-3 d-flex justify-content-center">
   <div class="col-6 d-flex justify-content-center">
     <p>
@@ -7,7 +17,140 @@
     </p>
   </div>
 </div>
+
 <div class="row d-flex justify-content-center">
+  <div class="col-3">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Valeur</th>
+          <th scope="col">Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>8</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>9</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+  <div class="col-4">
+    <div class="row">
+      <div class="col-2"><label>FORCE</label></div>
+      <div class="col-2">
+        <input
+          [ngModel]="forceValue"
+          (ngModelChange)="forceValueChange($event)"
+          type="number"
+          min="8"
+          max="15"
+          value="8"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2"><label>CHARISME</label></div>
+      <div class="col-2">
+        <input
+          [ngModel]="charismeValue"
+          (ngModelChange)="charismeValueChange($event)"
+          type="number"
+          min="8"
+          max="15"
+          value="8"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2"><label>SAGESSE</label></div>
+      <div class="col-2">
+        <input
+          [ngModel]="sagesseValue"
+          (ngModelChange)="sagesseValueChange($event)"
+          type="number"
+          min="8"
+          max="15"
+          value="8"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="row">
+      <div class="col-2"><label>INTELLIGENCE</label></div>
+      <div class="col-2">
+        <input
+          [ngModel]="intelligenceValue"
+          (ngModelChange)="intelligenceValueChange($event)"
+          type="number"
+          min="8"
+          max="15"
+          value="8"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2"><label>DEXTERITE</label></div>
+      <div class="col-2">
+        <input
+          [ngModel]="dexteriteValue"
+          (ngModelChange)="dexteriteValueChange($event)"
+          type="number"
+          min="8"
+          max="15"
+          value="8"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2"><label>CONSTITUTION</label></div>
+      <div class="col-2">
+        <input
+          [ngModel]="constitutionValue"
+          (ngModelChange)="constitutionValueChange($event)"
+          type="number"
+          min="8"
+          max="15"
+          value="8"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row d-flex justify-content-center">
   <div class="col-3">
     <label>FORCE</label>
     <input
@@ -19,74 +162,80 @@
       value="8"
     />
     <input type="button" value="Ok" id="forceValue" />
-  </div>
+  </div> -->
 
-  <div class="col-3">
-    <label>CHARISME</label>
-    <input
-      [ngModel]="charismeValue"
-      (ngModelChange)="charismeValueChange($event)"
-      type="number"
-      min="8"
-      max="15"
-      value="8"
-    />
-    <input type="button" value="Ok" id="charismeValue" />
-  </div>
+<!-- <div class="col-3">
+  <label>CHARISME</label>
+  <input
+    [ngModel]="charismeValue"
+    (ngModelChange)="charismeValueChange($event)"
+    type="number"
+    min="8"
+    max="15"
+    value="8"
+  />
+  <input type="button" value="Ok" id="charismeValue" />
+</div> -->
 
-  <div class="col-3">
-    <label>SAGESSE</label>
-    <input
-      [ngModel]="sagesseValue"
-      (ngModelChange)="sagesseValueChange($event)"
-      type="number"
-      min="8"
-      max="15"
-      value="8"
-    />
-    <input type="button" value="Ok" id="sagesseValue" />
-  </div>
+<!-- <div class="col-3">
+  <label>SAGESSE</label>
+  <input
+    [ngModel]="sagesseValue"
+    (ngModelChange)="sagesseValueChange($event)"
+    type="number"
+    min="8"
+    max="15"
+    value="8"
+  />
+  <input type="button" value="Ok" id="sagesseValue" />
+</div> -->
 
-  <div class="col-3">
-    <label>INTELLIGENCE</label>
-    <input
-      [ngModel]="intelligenceValue"
-      (ngModelChange)="intelligenceValueChange($event)"
-      type="number"
-      min="8"
-      max="15"
-      value="8"
-    />
-    <input type="button" value="Ok" id="intelligenceValue" />
-  </div>
+<!-- <div class="col-3">
+  <label>INTELLIGENCE</label>
+  <input
+    [ngModel]="intelligenceValue"
+    (ngModelChange)="intelligenceValueChange($event)"
+    type="number"
+    min="8"
+    max="15"
+    value="8"
+  />
+  <input type="button" value="Ok" id="intelligenceValue" />
+</div> -->
 
-  <div class="col-3">
-    <label>DEXTERITE</label>
-    <input
-      [ngModel]="dexteriteValue"
-      (ngModelChange)="dexteriteValueChange($event)"
-      type="number"
-      min="8"
-      max="15"
-      value="8"
-    />
-    <input type="button" value="Ok" id="dexteriteValue" />
-  </div>
+<!-- <div class="col-3">
+  <label>DEXTERITE</label>
+  <input
+    [ngModel]="dexteriteValue"
+    (ngModelChange)="dexteriteValueChange($event)"
+    type="number"
+    min="8"
+    max="15"
+    value="8"
+  />
+  <input type="button" value="Ok" id="dexteriteValue" />
+</div> -->
 
-  <div class="col-3">
-    <label>CONSTITUTION</label>
-    <input
-      [ngModel]="constitutionValue"
-      (ngModelChange)="constitutionValueChange($event)"
-      type="number"
-      min="8"
-      max="15"
-      value="8"
-    />
-    <input type="button" value="Ok" id="constitutionValue" />
+<!-- <div class="col-3">
+  <label>CONSTITUTION</label>
+  <input
+    [ngModel]="constitutionValue"
+    (ngModelChange)="constitutionValueChange($event)"
+    type="number"
+    min="8"
+    max="15"
+    value="8"
+  />
+  <input type="button" value="Ok" id="constitutionValue" />
+</div> -->
+
+<div class="mx-5 mt-3 row d-flex justify-content-end">
+  <div class="col-2">
+    <a
+      class="user-create d-flex justify-content-center p-3"
+      routerLink="/metier-personnage"
+      routerLinkActive="active"
+      >Suivant</a
+    >
   </div>
 </div>
-
-<!-- <script src="script.js"></script>
-  </body>
-</html> -->
