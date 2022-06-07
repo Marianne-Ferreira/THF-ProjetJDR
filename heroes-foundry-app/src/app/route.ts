@@ -1,3 +1,5 @@
+import { GenrePersonnageComponent } from './genre-personnage/genre-personnage.component';
+import { NomPersonnageComponent } from './nom-personnage/nom-personnage.component';
 import { CaracPersonnageComponent } from './carac-personnage/carac-personnage.component';
 import { DisplayStuffComponent } from './display-stuff/display-stuff.component';
 import { PersonnageUserComponent } from './personnage-user/personnage-user.component';
@@ -20,6 +22,8 @@ export const routes: Routes = [
   { path: 'display-stuff', component: DisplayStuffComponent },
   { path: 'create-stuff', component: CreateAccountComponent },
   { path: 'home-user', component: HomeUserComponent },
+  { path: 'nom-personnage', component: NomPersonnageComponent },
+  { path: 'genre-personnage', component: GenrePersonnageComponent },
   { path: 'display-personnage', component: DisplayStuffComponent },
   { path: 'carac-personnage', component: CaracPersonnageComponent },
   { path: 'a-propos', component: AProposComponent },

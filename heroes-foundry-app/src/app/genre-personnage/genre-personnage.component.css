@@ -1,0 +1,4 @@
+.override-form-check-input:checked{
+  background-color: rgba(148, 132, 132, 0.82);
+  border-color: rgba(148, 132, 132, 0.82);
+}

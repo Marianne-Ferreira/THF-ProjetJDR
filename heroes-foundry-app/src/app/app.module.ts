@@ -20,6 +20,8 @@ import { DisplayStuffComponent } from './display-stuff/display-stuff.component';
 import { CreateStuffComponent } from './create-stuff/create-stuff.component';
 import { DisplayPersonnageComponent } from './display-personnage/display-personnage.component';
 import { CaracPersonnageComponent } from './carac-personnage/carac-personnage.component';
+import { NomPersonnageComponent } from './nom-personnage/nom-personnage.component';
+import { GenrePersonnageComponent } from './genre-personnage/genre-personnage.component';
 
 @NgModule({
   //Déclaration des modules auprès d'Angular
@@ -40,6 +42,8 @@ import { CaracPersonnageComponent } from './carac-personnage/carac-personnage.co
     DisplayPersonnageComponent,
     CreateAccountComponent,
     CaracPersonnageComponent,
+    NomPersonnageComponent,
+    GenrePersonnageComponent,
   ],
   imports: [
     BrowserModule,
