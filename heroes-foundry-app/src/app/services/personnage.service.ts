@@ -1,4 +1,4 @@
-import { Personnage } from '../model/personnage';
+import { Personnage } from './../model/personnage';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class PersonnageService {
-  url: string = 'http://localhost:8080/personnage';
+  url : string = 'http://localhost:8080/personnage';
 
   constructor(private httpClient: HttpClient) {}
 
