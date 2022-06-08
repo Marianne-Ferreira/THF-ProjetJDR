@@ -12,9 +12,9 @@ import ProjetJDR.THF_SpringBoot.entity.Consommables;
 public interface ConsommablesRepository extends JpaRepository<Consommables, Long> {
 
 	
+
 	
-	
-	@Query("select c from Consommables c where c.id=: id")
+	@Query("select c from consommables c where c.id=: id")
 	Optional<Consommables> findByIdConsommables(@Param("id") Long id);
 	
 	List<Consommables> findAll();

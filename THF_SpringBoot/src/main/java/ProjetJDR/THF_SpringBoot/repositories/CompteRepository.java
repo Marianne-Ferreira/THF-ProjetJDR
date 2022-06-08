@@ -18,7 +18,7 @@ public interface CompteRepository extends JpaRepository <Compte, Long>{
 	
 	Optional<Compte> findByLogin(String login);
 
-	@Query("Select c from Compte c where c.login=:login and c.password=:password")
+	@Query("SELECT c FROM compte c WHERE compte.login=:login AND compte.password=:password")
 	Optional<Compte> seConnecter(@Param("login") String login, @Param("password") String password);
 //
 //	@Query("Select j from Joueur j")

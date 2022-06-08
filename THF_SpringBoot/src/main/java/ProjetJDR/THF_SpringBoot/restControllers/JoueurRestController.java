@@ -47,7 +47,7 @@ public class JoueurRestController {
 
 	// INTERACTIONS AVEC SES PERSONNAGES
 
-	@GetMapping("/personnage") // Mais la ca va donner tous les personnages de tous les joueurs non ?
+	@GetMapping("/personnage")
 	@JsonView(JsonViews.Common.class)
 	public List<Personnage> getAllPersonnages() {
 		return personnageService.getAll();

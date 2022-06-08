@@ -12,10 +12,10 @@ import ProjetJDR.THF_SpringBoot.entity.Personnage;
 
 public interface MetierRepository extends JpaRepository <Metiers, Long>{
 	
-	@Query("select m from Metier m where m.prenom=:prenom")
+	@Query("select m from metier m where m.prenom=:prenom")
 	Optional<Metiers> findByPrenom(@Param("prenom") String prenom);
 
-	@Query("select m from Metier m where m.nom=:nom")
+	@Query("select m from metier m where m.nom=:nom")
 	Optional<Metiers> findByNom(@Param("nom") String nom);
 
 }

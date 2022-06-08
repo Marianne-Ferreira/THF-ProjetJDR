@@ -11,21 +11,21 @@ import ProjetJDR.THF_SpringBoot.entity.Personnage;
 
 public interface PersonnageRepository extends JpaRepository <Personnage, Long>{
 
-	@Query("select p from Personnage p left join fetch p.stuff where p.id=:id")
+	@Query("select p from personnage p left join fetch p.stuff where p.id=:id")
 	Optional<Personnage> findByIdWithStuff(@Param("id") Long id);
 
-	@Query("select p from Personnage p where p.prenom=:prenom")
+	@Query("select p from personnage p where p.prenom=:prenom")
 	Optional<Personnage> findByPrenom(@Param("prenom") String prenom);
 
-	@Query("select p from Personnage p where p.nom=:nom")
+	@Query("select p from personnage p where p.nom=:nom")
 	Optional<Personnage> findByNom(@Param("nom") String nom);
 	
-	@Query("select p from Personnage p left join fetch p.metier where p.metier=:metier")
+	@Query("select p from personnage p left join fetch p.metier where p.metier=:metier")
 	Optional<Personnage> findPersonnageByMetier(@Param("metier") Metiers metier);
 
-	@Query("delete p from Personnage p where p.nom =:nom")
+	@Query("delete p from personnage p where p.nom =:nom")
 	Optional<Personnage> deleteByNom(String nom);
 	
-	@Query("delete p from Personnage p where p.prenom =:prenom")
+	@Query("delete p from personnage p where p.prenom =:prenom")
 	Optional<Personnage> deleteByPrenom(String prenom);
 }
