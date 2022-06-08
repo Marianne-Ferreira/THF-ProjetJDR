@@ -179,20 +179,22 @@ export class CaracPersonnageComponent implements OnInit {
     console.log(this.totalPointsConstitution + '/' + this.totalPointsResult);
   }
 
-
+// Passage des infos au back
   saveCarac(){//voir l'url pour passer les infos
     this.httpClient.post('http://local:8080/', {
+
       force : this.forceValue,
-      //6 carac
+      charisme : this.charismeValue,
+      sagesse : this.sagesseValue,
+      intelligence : this.intelligenceValue,
+      dexterite : this.dexteriteValue,
+      constitution : this.constitutionValue,
     }).subscribe((data)=>{
 
-      this.router.navigate(['/metier-personnage', 1]) //peut-etre besoin du /
+      this.router.navigate(['/metier-personnage']) //peut-etre besoin du /
 
     })
   }
-
-
-
 
 
 }
