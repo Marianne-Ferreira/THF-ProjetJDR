@@ -3,6 +3,7 @@ package ProjetJDR.THF_SpringBoot.restControllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,8 +25,8 @@ import ProjetJDR.THF_SpringBoot.services.CompteService;
 import ProjetJDR.THF_SpringBoot.services.PersonnageService;
 
 @RestController
-@RequestMapping("/admin")
-//@CrossOrigin(origins = "*")
+@RequestMapping("/api/admin")
+@CrossOrigin(origins = "*")
 
 
 public class AdminRestController {
@@ -63,13 +64,13 @@ public class AdminRestController {
 	
 	//PERSONNAGES DU JOUEUR
 	
-	@GetMapping("/{id}/personnages")
+	@GetMapping("/personnage/{id}")
 	@JsonView(JsonViews.JoueurWithPersonnages.class) 
 	public Joueur getJoueurByIdWithPersonnages(@PathVariable Long id) {
 		return compteService.getByIdWithPersonnages(id);
 	}
 
-	@DeleteMapping("/{id}/personnages")
+	@DeleteMapping("/personnage/{id}")
 	@JsonView(JsonViews.JoueurWithPersonnages.class)
 	public void DeletePersonnageById(@PathVariable Long id) {
 		personnageService.deleteById(id); 
@@ -78,7 +79,7 @@ public class AdminRestController {
 	
 	//BOUTIQUE
 
-	@GetMapping("/boutique/gestion") //Ajouter un bouton de filtre pour s�parer les consommables de l'�quipement
+	@GetMapping("/boutique") //Ajouter un bouton de filtre pour s�parer les consommables de l'�quipement
 	@JsonView(JsonViews.Common.class)
 	public List<Boutique> getAllBoutique() {
 		return boutiqueService.getAll();		
@@ -87,25 +88,25 @@ public class AdminRestController {
 	
 	//CONSOMMABLES
 	
-	@GetMapping("/boutique/gestion/consommables")
+	@GetMapping("/boutique/consommables")
 	@JsonView(JsonViews.ConsommablesFromBoutique.class) 
 	public List<Consommables> getAllConsommables() {        
 		return boutiqueService.getAllConsommables();
 	}
 
-	@PostMapping("/boutique/gestion/consommables")
+	@PostMapping("/boutique/consommables")
 	@JsonView(JsonViews.ConsommablesFromBoutique.class) 
 	public Consommables createConsommables(@RequestBody Consommables consommables) {        
 		return (Consommables) boutiqueService.createConsommables(consommables); 
 	}
 	
-	@PutMapping("/boutique/gestion/consommables")
+	@PutMapping("/boutique/consommables")
 	@JsonView(JsonViews.ConsommablesFromBoutique.class) 
 	public Consommables updateConsommables(@RequestBody Consommables consommables) {        
 		return (Consommables) boutiqueService.updateConsommables(consommables);
 	}
 	
-	@DeleteMapping("/boutique/gestion/consommables/{id}")
+	@DeleteMapping("/boutique/consommables/{id}")
 	@JsonView(JsonViews.ConsommablesFromBoutique.class) 
 	public void deleteByIdConsommables(@PathVariable Long id) {       
 		boutiqueService.deleteByIdConsommables(id); 
@@ -114,25 +115,25 @@ public class AdminRestController {
 	
 	//EQUIPEMENT
 	
-	@GetMapping("/boutique/gestion/equipement")
+	@GetMapping("/boutique/equipement")
 	@JsonView(JsonViews.EquipementFromBoutique.class) 
 	public List<Equipement> getAllEquipement() {    
 		return boutiqueService.getAllEquipement();
 	}
 	
-	@PostMapping("/boutique/gestion/equipement")
+	@PostMapping("/boutique/equipement")
 	@JsonView(JsonViews.EquipementFromBoutique.class) 
 	public Equipement createEquipement(@RequestBody Equipement equipement) {       
 		return (Equipement) boutiqueService.createEquipement(equipement);
 	}
 	
-	@PutMapping("/boutique/gestion/equipement")
+	@PutMapping("/boutique/equipement")
 	@JsonView(JsonViews.EquipementFromBoutique.class) 
 	public Equipement updateEquipement(@RequestBody Equipement equipement) {         
 		return (Equipement) boutiqueService.updateEquipement(equipement); 
 	}
 	
-	@DeleteMapping("/boutique/gestion/equipement/{id}")
+	@DeleteMapping("/boutique/equipement/{id}")
 	@JsonView(JsonViews.ConsommablesFromBoutique.class) 
 	public void deleteByIdEquipement(@PathVariable Long id) {         
 		boutiqueService.deleteByIdEquipement(id);
