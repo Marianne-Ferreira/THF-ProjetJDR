@@ -15,6 +15,7 @@ import ProjetJDR.THF_SpringBoot.entity.Compte;
 import ProjetJDR.THF_SpringBoot.entity.Joueur;
 import ProjetJDR.THF_SpringBoot.exceptions.BoutiqueException;
 import ProjetJDR.THF_SpringBoot.repositories.CompteRepository;
+import ProjetJDR.THF_SpringBoot.repositories.JoueurRepository;
 
 
 @Service
@@ -22,13 +23,16 @@ public class CompteService implements UserDetailsService {
 
 	@Autowired
 	private CompteRepository compteRepository;
+	
+	@Autowired
+	private JoueurRepository joueurRepository;
 
 	public List<Compte> getAll() {
 		return compteRepository.findAll();
 	}
 
 	public List<Joueur> getAllJoueurs() {
-		return compteRepository.findAllJoueurs();
+		return joueurRepository.findAll();
 	}
 
 	public Compte getById(Long id) {
@@ -36,7 +40,7 @@ public class CompteService implements UserDetailsService {
 	}
 
 	public Joueur getByIdWithPersonnages(Long id) {
-		return compteRepository.findByIdWithPersonnages(id).orElseThrow(RuntimeException::new);
+		return joueurRepository.findByIdWithPersonnages(id).orElseThrow(RuntimeException::new);
 	}
 
 	public Compte seConnecter(String login, String password) {
@@ -70,7 +74,7 @@ public class CompteService implements UserDetailsService {
 	}
 
 	public void deleteByPseudoJoueur(String pseudo) {
-		compteRepository.deleteByPseudoJoueur(pseudo);
+		joueurRepository.deleteByPseudoJoueur(pseudo);
 	}
 
 	public Compte getByLogin(String login) {
@@ -86,7 +90,7 @@ public class CompteService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String pseudo) throws UsernameNotFoundException {
-		return compteRepository.findByPseudo(pseudo).orElseThrow(() -> {
+		return joueurRepository.findByPseudo(pseudo).orElseThrow(() -> {
 			throw new UsernameNotFoundException("Pseudo introuvable");
 		});
 	}
