@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import ProjetJDR.THF_SpringBoot.entity.Metier;
+import ProjetJDR.THF_SpringBoot.entity.Metiers;
 import ProjetJDR.THF_SpringBoot.entity.Personnage;
 
 public interface PersonnageRepository extends JpaRepository <Personnage, Long>{
@@ -21,7 +21,7 @@ public interface PersonnageRepository extends JpaRepository <Personnage, Long>{
 	Optional<Personnage> findByNom(@Param("nom") String nom);
 	
 	@Query("select p from Personnage p left join fetch p.metier where p.metier=:metier")
-	Optional<Personnage> findPersonnageByMetier(@Param("metier") Metier metier);
+	Optional<Personnage> findPersonnageByMetier(@Param("metier") Metiers metier);
 
 	@Query("delete p from Personnage p where p.nom =:nom")
 	Optional<Personnage> deleteByNom(String nom);

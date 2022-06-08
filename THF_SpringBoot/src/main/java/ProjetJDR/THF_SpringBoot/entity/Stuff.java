@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 @SequenceGenerator(name="seqStuff", sequenceName = "seq_stuff", initialValue = 1, allocationSize = 1)
 @Embeddable
@@ -19,13 +21,17 @@ public class Stuff {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "seqStuff")
+	@JsonView(JsonViews.PersonnageWithStuff.class)
 	private Long id; 
+	@JsonView(JsonViews.PersonnageWithStuff.class)
 	private int quantite;
 	@ManyToOne
 	@JoinColumn(name = "equipement_id", foreignKey = @ForeignKey(name = "stuff_equipement_id_fk"))
+	@JsonView(JsonViews.PersonnageWithStuff.class)
 	private Equipement equipement;
 	@ManyToOne
 	@JoinColumn(name = "consommables_id", foreignKey = @ForeignKey(name = "stuff_consommables_id_fk"))
+	@JsonView(JsonViews.PersonnageWithStuff.class)
 	private Consommables consommables;
 
 
