@@ -1,32 +1,66 @@
 package ProjetJDR.THF_SpringBoot.config;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-public class NewSecurityconfig {
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+public class NewSecurityconfig extends WebSecurityConfigurerAdapter {
 
-	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
 		// @formatter:off
-		http.antMatcher("/compte/**")
+		http.antMatcher("/api/**")
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 				.and()
-				.csrf().ignoringAntMatchers("/compte/**")
+				.csrf().ignoringAntMatchers("/api/**")
 				.and()
 				.authorizeHttpRequests()
-					.antMatchers(HttpMethod.POST, "/compte/auth/inscription").permitAll()
-					.antMatchers("/api/**").authenticated()
+					.antMatchers(HttpMethod.OPTIONS).permitAll()
+					.antMatchers(HttpMethod.GET,"/api/matiere/**","/api/compte/login/**").permitAll()
+					.antMatchers(HttpMethod.POST,"/api/compte/inscription").permitAll()
+					.anyRequest().authenticated()
 				.and()
 				.httpBasic();
+		
+//		http.antMatcher("/**")
+//				.authorizeHttpRequests()
+//					.antMatchers("/","/home","/formateur/**","/formlogin").permitAll()
+//					.antMatchers("/matiere/**").hasRole("ADMIN")
+//					.anyRequest().authenticated()
+//				.and()
+//				.formLogin()
+//					.loginPage("/formlogin")
+//					.defaultSuccessUrl("/secure/home")
+//					.failureUrl("/formlogin?error=true")
+//				.and()
+//				.logout()
+//					.logoutUrl("/logout")  //a appeler en POST!!!!!!!=> csrf à traiter
+//					.logoutSuccessUrl("/home");
 		// @formatter:on
-		return http.build();
+	}
+
+	@Autowired
+	private UserDetailsService userDetailService;
+
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		// @formatter:off
+//		auth.inMemoryAuthentication()
+//				.withUser("admin").password("{noop}admin").roles("ADMINISTRATEUR")
+//				.and()
+//				.withUser("user1").password("{noop}user1").roles("USER");
+		auth.userDetailsService(userDetailService);		
+		// @formatter:on
 	}
 
 	@Bean

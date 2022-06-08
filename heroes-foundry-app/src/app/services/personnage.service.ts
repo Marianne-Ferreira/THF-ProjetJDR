@@ -17,22 +17,19 @@ export class PersonnageService {
 
   getByPrenom(prenom: string): Observable<Personnage> {
     return this.httpClient.get<Personnage>(
-      `${this.url}/${personnage.prenom}`,
-      personnage
+      `${this.url}/${prenom}`
     );
   }
 
   getByNom(nom: string): Observable<Personnage> {
     return this.httpClient.get<Personnage>(
-      `${this.url}/${personnage.nom}`,
-      personnage
+      `${this.url}/${nom}`
     );
   }
 
   getByIdWithStuff(id: number): Observable<Personnage> {
     return this.httpClient.get<Personnage>(
-      `${this.url}/${id}/${personnage.stuff}`,
-      personnage
+      `${this.url}/${id}`
     );
   }
 
@@ -52,10 +49,7 @@ export class PersonnageService {
   }
 
   delete(personnage: Personnage): Observable<void> {
-    return this.httpClient.delete<void>(
-      `${this.url}/${personnage.id}`,
-      personnage
-    );
+    return this.httpClient.delete<void>(`${this.url}/${personnage.id}`);
   }
 
   deleteById(id: number): Observable<void> {

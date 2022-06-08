@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 })
 export class BoutiqueService {
 
-  url : string = 'http://localhost:8080/boutique'
+  url : string = 'http://localhost:8080/'
 
   constructor(private httpClient : HttpClient) { }
 
@@ -28,7 +28,7 @@ export class BoutiqueService {
   }
 
   delete(boutique : Boutique) : Observable<void> {
-    return this.httpClient.delete<void>(`${this.url}/${boutique.nomStuff}`, boutique);
+    return this.httpClient.delete<void>(`${this.url}/${boutique.nomStuff}`);
 
 
 
