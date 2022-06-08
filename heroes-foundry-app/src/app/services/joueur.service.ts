@@ -1,12 +1,12 @@
-import { Consommables } from './consommables';
+import { Consommables } from '../model/consommables';
 import { Injectable } from '@angular/core';
 import { Cons, Observable } from 'rxjs';
-import { Personnage } from './personnage';
+import { Personnage } from '../model/personnage';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Joueur } from './joueur';
-import { Stuff } from './stuff';
-import { Boutique } from './boutique';
-import { Equipement } from './equipement';
+import { Joueur } from '../model/joueur';
+import { Stuff } from '../model/stuff';
+import { Boutique } from '../model/boutique';
+import { Equipement } from '../model/equipement';
 
 @Injectable({
   providedIn: 'root',
@@ -93,4 +93,4 @@ export class JoueurService {
     return this.httpClient.get<Equipement[]>(this.url);
   }
 }
-// /api/joueur/personnage
+

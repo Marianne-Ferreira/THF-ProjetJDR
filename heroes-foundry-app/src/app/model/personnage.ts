@@ -1,4 +1,6 @@
 import { PerformanceNodeTiming } from 'perf_hooks';
+import { Stats } from './stats';
+import { Stuff } from './stuff';
 
 export class Personnage {
   public constructor(
