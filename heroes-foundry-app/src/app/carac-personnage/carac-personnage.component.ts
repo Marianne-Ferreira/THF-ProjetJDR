@@ -174,3 +174,12 @@ export class CaracPersonnageComponent implements OnInit {
     console.log(this.totalPointsConstitution + '/' + this.totalPointsResult);
   }
 }
+
+// class
+
+// document.getElementById('toto')?.addEventListener('click', () => {
+//   console.log('click')
+//   fetch('http://localhost:4200/personnage')
+//   .then(res => { console.log(res)})
+//   .catch(err => { console.log(err)})
+// })
