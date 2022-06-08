@@ -10,6 +10,7 @@
 
 <div class="row p-3 d-flex justify-content-center">
   <div class="col-6 d-flex justify-content-center">
+      points à répartir entre vos valeurs de caractéritiques. Le prix de chaque
     <p class="text-carac">
       Vous avez <span id="totalPoints">{{ totalPointsResult }}</span> points à
       répartir entre vos valeurs de caractéritiques. Le prix de chaque valeur de
@@ -154,7 +155,7 @@
   <div class="col-3">
     <label>FORCE</label>
     <input
-      [ngModel]="forceValue"
+      [(ngModel)]="forceValue"
       (ngModelChange)="forceValueChange($event)"
       type="number"
       min="8"
@@ -164,78 +165,68 @@
     <input type="button" value="Ok" id="forceValue" />
   </div> -->
 
-<!-- <div class="col-3">
-  <label>CHARISME</label>
-  <input
-    [ngModel]="charismeValue"
-    (ngModelChange)="charismeValueChange($event)"
-    type="number"
-    min="8"
-    max="15"
-    value="8"
-  />
-  <input type="button" value="Ok" id="charismeValue" />
-</div> -->
+  <div class="col-3">
+    <label>CHARISME</label>
+    <input
+      [(ngModel)]="charismeValue"
+      (ngModelChange)="charismeValueChange($event)"
+      type="number"
+      min="8"
+      max="15"
+      value="8"
+    />
+    <input type="button" value="Ok" id="charismeValue" />
+  </div>
 
-<!-- <div class="col-3">
-  <label>SAGESSE</label>
-  <input
-    [ngModel]="sagesseValue"
-    (ngModelChange)="sagesseValueChange($event)"
-    type="number"
-    min="8"
-    max="15"
-    value="8"
-  />
-  <input type="button" value="Ok" id="sagesseValue" />
-</div> -->
+  <div class="col-3">
+    <label>SAGESSE</label>
+    <input
+      [(ngModel)]="sagesseValue"
+      (ngModelChange)="sagesseValueChange($event)"
+      type="number"
+      min="8"
+      max="15"
+      value="8"
+    />
+    <input type="button" value="Ok" id="sagesseValue" />
+  </div>
 
-<!-- <div class="col-3">
-  <label>INTELLIGENCE</label>
-  <input
-    [ngModel]="intelligenceValue"
-    (ngModelChange)="intelligenceValueChange($event)"
-    type="number"
-    min="8"
-    max="15"
-    value="8"
-  />
-  <input type="button" value="Ok" id="intelligenceValue" />
-</div> -->
+  <div class="col-3">
+    <label>INTELLIGENCE</label>
+    <input
+      [(ngModel)]="intelligenceValue"
+      (ngModelChange)="intelligenceValueChange($event)"
+      type="number"
+      min="8"
+      max="15"
+      value="8"
+    />
+    <input type="button" value="Ok" id="intelligenceValue" />
+  </div>
 
-<!-- <div class="col-3">
-  <label>DEXTERITE</label>
-  <input
-    [ngModel]="dexteriteValue"
-    (ngModelChange)="dexteriteValueChange($event)"
-    type="number"
-    min="8"
-    max="15"
-    value="8"
-  />
-  <input type="button" value="Ok" id="dexteriteValue" />
-</div> -->
+  <div class="col-3">
+    <label>DEXTERITE</label>
+    <input
+      [(ngModel)]="dexteriteValue"
+      (ngModelChange)="dexteriteValueChange($event)"
+      type="number"
+      min="8"
+      max="15"
+      value="8"
+    />
+    <input type="button" value="Ok" id="dexteriteValue" />
+  </div>
 
-<!-- <div class="col-3">
-  <label>CONSTITUTION</label>
-  <input
-    [ngModel]="constitutionValue"
-    (ngModelChange)="constitutionValueChange($event)"
-    type="number"
-    min="8"
-    max="15"
-    value="8"
-  />
-  <input type="button" value="Ok" id="constitutionValue" />
-</div> -->
-
-<div class="mx-5 mt-3 row d-flex justify-content-end">
-  <div class="col-2">
-    <a
-      class="user-create d-flex justify-content-center p-3"
-      routerLink="/competence-personnage"
-      routerLinkActive="active"
-      >Suivant</a
-    >
+  <div class="col-3">
+    <label>CONSTITUTION</label>
+    <input
+      [(ngModel)]="constitutionValue"
+      (ngModelChange)="constitutionValueChange($event)"
+      type="number"
+      min="8"
+      max="15"
+      value="8"
+    />
+    <input type="button" value="Ok" id="constitutionValue" />
   </div>
 </div>
