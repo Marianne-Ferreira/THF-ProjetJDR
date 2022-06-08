@@ -1,10 +1,10 @@
 export class Compte {
   public constructor(
-    public _id?: number,
-    public _nom?: string,
-    public _prenom?: string,
-    public _login?: string,
-    public _password?: string
+    protected _id?: number,
+    protected _nom?: string,
+    protected _prenom?: string,
+    protected _login?: string,
+    protected _password?: string
   ) {}
 
   get id(): number | undefined {

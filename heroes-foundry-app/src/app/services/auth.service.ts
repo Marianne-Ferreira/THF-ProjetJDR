@@ -11,7 +11,7 @@ export class AuthService {
     let monHeaders = new HttpHeaders({
       Authorization: 'Basic ' + btoa(${login}:${password}),
     });
-    return this.httpClient.get<Compte>('http://localhost:8080/auth', {
+    return this.httpClient.get<Compte>('http://localhost:8080/api/auth', {
       headers: monHeaders,
     });
   }

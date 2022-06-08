@@ -5,8 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
-import ProjetJDR.THF_SpringBoot.entity.Metier;
+import ProjetJDR.THF_SpringBoot.entity.Metiers;
 import ProjetJDR.THF_SpringBoot.entity.Personnage;
 import ProjetJDR.THF_SpringBoot.exceptions.PersonnageException;
 import ProjetJDR.THF_SpringBoot.repositories.PersonnageRepository;
@@ -48,7 +47,7 @@ public class PersonnageService {
 
 	// Retourne tous les personnages dont le metier est celui indiqué par
 	// l'utilisateur
-	public Personnage getPersonnageByMetier(Metier metier) {
+	public Personnage getPersonnageByMetier(Metiers metier) {
 		return personnageRepository.findPersonnageByMetier(metier).orElseThrow(() -> {
 			throw new PersonnageException("Veuillez insérer un Id existant");
 		});

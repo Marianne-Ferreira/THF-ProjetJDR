@@ -25,7 +25,7 @@ import ProjetJDR.THF_SpringBoot.services.CompteService;
 
 
 @RestController
-@RequestMapping("/api/compte")
+@RequestMapping("/api/auth")
 @CrossOrigin(origins = "*")
 public class CompteRestController {
 
@@ -44,7 +44,7 @@ public class CompteRestController {
 	
 	@JsonView(JsonViews.Common.class)
 	@PreAuthorize("isAnonymous()")
-	@PostMapping("/compte/inscription")
+	@PostMapping("/inscription")
 	public Compte create(@RequestBody Joueur joueur) {
 		if(compteService.checkLoginExist(joueur.getLogin())) {
 			throw new ResponseStatusException(HttpStatus.CONFLICT);

@@ -1,4 +1,5 @@
 package ProjetJDR.THF_SpringBoot.config;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class NewSecurityconfig extends WebSecurityConfigurerAdapter {
+public class Securityconfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -23,10 +24,24 @@ public class NewSecurityconfig extends WebSecurityConfigurerAdapter {
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 				.and()
 				.csrf().ignoringAntMatchers("/api/**")
+				
 				.and()
 				.authorizeHttpRequests()
 					.antMatchers(HttpMethod.OPTIONS).permitAll()
-					.antMatchers(HttpMethod.GET,"/api/matiere/**","/api/compte/login/**").permitAll()
+					 .antMatchers(HttpMethod.GET,"/api/auth", "/api/auth/connexion", "/api/auth/inscription").permitAll()
+                     
+                     .antMatchers(HttpMethod.GET, "/api/admin/**").hasRole("ADMIN")
+                     .antMatchers(HttpMethod.POST, "/api/admin/**").hasRole("ADMIN")
+                     .antMatchers(HttpMethod.PATCH, "/api/admin/**").hasRole("ADMIN")
+                     .antMatchers(HttpMethod.PUT, "/api/admin/**").hasRole("ADMIN")
+                     .antMatchers(HttpMethod.DELETE, "/api/admin/**").hasRole("ADMIN")
+                     
+                     .antMatchers(HttpMethod.GET, "/api/joueur/**").hasRole("JOUEUR")
+                     .antMatchers(HttpMethod.POST, "/api/joueur/**").hasRole("JOUEUR")
+                     .antMatchers(HttpMethod.PATCH, "/api/joueur/**").hasRole("JOUEUR")
+                     .antMatchers(HttpMethod.PUT, "/api/joueur/**").hasRole("JOUEUR")
+                     .antMatchers(HttpMethod.DELETE, "/api/joueur/**").hasRole("JOUEUR")
+					.antMatchers(HttpMethod.GET,"/api/compte/login/**").permitAll()
 					.antMatchers(HttpMethod.POST,"/api/compte/inscription").permitAll()
 					.anyRequest().authenticated()
 				.and()

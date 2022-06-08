@@ -1,7 +1,7 @@
 import { DisplayStuffComponent } from './display-stuff/display-stuff.component';
 import { PersonnageUserComponent } from './personnage-user/personnage-user.component';
 import { GestionBoutiqueComponent } from './gestion-boutique/gestion-boutique.component';
-import { ListeUserComponent } from './liste-user/liste-user.component';
+import { ListeUserComponent } from './model/liste-user/liste-user.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { HomeUserComponent } from './home-user/home-user.component';

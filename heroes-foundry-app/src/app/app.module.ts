@@ -13,7 +13,7 @@ import { PasswordForgotComponent } from './password-forgot/password-forgot.compo
 import { HomeUserComponent } from './home-user/home-user.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
-import { ListeUserComponent } from './liste-user/liste-user.component';
+import { ListeUserComponent } from './model/liste-user/liste-user.component';
 import { GestionBoutiqueComponent } from './gestion-boutique/gestion-boutique.component';
 import { PersonnageUserComponent } from './personnage-user/personnage-user.component';
 import { DisplayStuffComponent } from './display-stuff/display-stuff.component';

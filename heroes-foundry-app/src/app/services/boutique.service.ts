@@ -32,7 +32,6 @@ export class BoutiqueService {
 
 
 
-
 	//CONSOMMABLES
 
   getAll() : Observable<Consommables[]>{
