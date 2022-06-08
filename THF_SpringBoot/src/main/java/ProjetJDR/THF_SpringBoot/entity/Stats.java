@@ -1,8 +1,14 @@
 package ProjetJDR.THF_SpringBoot.entity;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+
+import com.fasterxml.jackson.annotation.JsonView;
 
 @Embeddable
 public class Stats {
@@ -11,7 +17,25 @@ public class Stats {
 	private Metiers metier;
 	@Enumerated(EnumType.STRING)
 	private Competences competence;
+	@JsonView(JsonViews.Common.class)
+	@Embedded
+	@AttributeOverrides({ @AttributeOverride(name = "id", column = @Column(name = "id_carac")),
+		@AttributeOverride(name = "force", column = @Column(name = "force_carac")),
+		@AttributeOverride(name = "dexterite", column = @Column(name = "dexterite_carac")),
+		@AttributeOverride(name = "charisme", column = @Column(name = "charisme_carac")),
+		@AttributeOverride(name = "sagesse", column = @Column(name = "sagesse_carac")),
+		@AttributeOverride(name = "intelligence", column = @Column(name = "intelligence_carac")),
+		@AttributeOverride(name = "constitution", column = @Column(name = "constitution_carac")) })
+	private Caracteristiques caracteristiques;
 
+	int ForceValue = request.getParameter("forceValue");
+	int IntelligenceValue = request.getParameter("intelligenceValue");
+	int ConstitutionValue = request.getParameter("constitutionValue");
+	int SagesseValue = request.getParameter("sagesseValue");
+	int DexteriteValue = request.getParameter("dexteriteValue");
+	int CharismeValue = request.getParameter("charismeValue");
+
+	
 	// Compétences accessibles en fonction du métier choisi
 
 	public void ChoixCompetences() {
@@ -62,4 +86,6 @@ public class Stats {
 		}
 	}
 
+	
+	
 }
