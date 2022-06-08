@@ -42,12 +42,16 @@ public class BoutiqueService {
 	}
 
 	public Consommables getByIdConsommables(Long id) { // Ici on prend l'un des items present dans la boutique via son id
-		return (Consommables) boutiqueRepository.findById(id).orElseThrow(BoutiqueException::new);
+		return boutiqueRepository.findByIdConsommables(id).orElseThrow(()->{
+			throw new BoutiqueException("Veuillez inserez un Id valide");
+		});
 	}
 
 	public Consommables getConsommablesByLibelle(String libelle) { // Ici on prend l'un des items present dans la boutique
 		// via son id
-		return (Consommables) boutiqueRepository.findConsommablesByLibelle(libelle).orElseThrow(BoutiqueException::new);
+		return boutiqueRepository.findConsommablesByLibelle(libelle).orElseThrow(()->{
+			throw new BoutiqueException("Veuillez inserez un libelle valide");
+		});
 	}
 
 	public Consommables createConsommables(Consommables consommables) { // on cr�e un objet
@@ -72,12 +76,16 @@ public class BoutiqueService {
 	}
 
 	public Equipement getByIdEquipement(Long id) { // Ici on prend l'un des items present dans la boutique via son id
-		return (Equipement) boutiqueRepository.findById(id).orElseThrow(BoutiqueException::new);
+		return boutiqueRepository.findByIdEquipement(id).orElseThrow(()->{
+			throw new BoutiqueException("Veuillez inserez un Id valide");
+		});
 	}
 	
 	public Equipement getEquipementByLibelle(String libelle) { // Ici on prend l'un des items present dans la boutique
 		// via son id
-		return (Equipement) boutiqueRepository.findEquipementByLibelle(libelle).orElseThrow(BoutiqueException::new);
+		return boutiqueRepository.findEquipementByLibelle(libelle).orElseThrow(()->{
+			throw new BoutiqueException("Veuillez inserez un libelle valide");
+		});
 	}
 
 	public Equipement createEquipement(Equipement equipement) { // on cr�e un objet

@@ -54,9 +54,19 @@ public class Personnage {
 	@OneToOne
 	@JoinColumn(name = "stuff_id", foreignKey = @ForeignKey(name="personnage_stuff_id_fk"))
 	private Stuff stuff;
-	@JsonView(JsonViews.Common.class)
-	@Enumerated(EnumType.STRING)
-	private Metiers metier;
+//	@Embedded
+//	@AttributeOverrides({ @AttributeOverride(name = "id", column = @Column(name = "id_metier")),
+//			@AttributeOverride(name = "developpeur", column = @Column(name = "developpeur_metier")),
+//			@AttributeOverride(name = "rh", column = @Column(name = "rh_metier")),
+//			@AttributeOverride(name = "chef_projet", column = @Column(name = "chef_projet_metier")),
+//			@AttributeOverride(name = "lead_tech", column = @Column(name = "lead_tech_metier")),
+//			@AttributeOverride(name = "business_analyst", column = @Column(name = "business_analyst_metier")),
+//			@AttributeOverride(name = "product_owner", column = @Column(name = "product_owner_metier")) })
+//	@OneToOne
+//	@JoinColumn(name = "metier_id", foreignKey = @ForeignKey(name="personnage_metier_id_fk"))
+//	@JsonView(JsonViews.Common.class)
+//	@Enumerated(EnumType.STRING)
+//	private Metiers metier;
 	
 	public Personnage() {
 		
