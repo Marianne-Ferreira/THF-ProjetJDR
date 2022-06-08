@@ -3,6 +3,7 @@ package ProjetJDR.THF_SpringBoot.restControllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,8 +28,8 @@ import ProjetJDR.THF_SpringBoot.services.PersonnageService;
 import ProjetJDR.THF_SpringBoot.services.StuffService;
 
 @RestController
-@RequestMapping("/joueur")
-//@CrossOrigin(origins = "*")
+@RequestMapping("api/joueur")
+@CrossOrigin(origins = "*")
 
 public class JoueurRestController {
 
@@ -58,17 +59,11 @@ public class JoueurRestController {
 		return personnageService.create(personnage);
 	}
 	
-	@DeleteMapping("/{id}/personnages")
+	@DeleteMapping("/personnage/{id}")
 	@JsonView(JsonViews.JoueurWithPersonnages.class)
-	public void DeletePersonnageByNom(@PathVariable String nom) {
-		personnageService.deleteByNom(nom); 
-	}
-	
-	@DeleteMapping("/{id}/personnages")
-	@JsonView(JsonViews.JoueurWithPersonnages.class)
-	public void DeletePersonnageByPrenom(@PathVariable String prenom) {
-		personnageService.deleteByPrenom(prenom); 
-	}
+	public void DeletePersonnageById(@PathVariable Long id) {
+		personnageService.deleteById(id); 
+	} 
 
 	// GESTION DU JOUEUR
 	
@@ -78,11 +73,11 @@ public class JoueurRestController {
 		return (Joueur) compteService.getById(id);
 	}//????
 
-	@GetMapping("/{id}/joueur")
-	@JsonView(JsonViews.JoueurWithPersonnages.class)
-	public Joueur getByIdWithPersonnages(@PathVariable Long id) {
-		return compteService.getByIdWithPersonnages(id);
-	}
+//	@GetMapping("/personnage")
+//	@JsonView(JsonViews.JoueurWithPersonnages.class)
+//	public Joueur getByIdWithPersonnages(@PathVariable Long id) {
+//		return compteService.getByIdWithPersonnages(id);
+//	}
 	
 	@DeleteMapping("/{id}")
 	@JsonView(JsonViews.Common.class)
@@ -110,19 +105,19 @@ public class JoueurRestController {
 		stuffService.deleteById(id);
 	}
 
-	@GetMapping("/{id}")
+	@GetMapping("/stuff/{id}/")
 	@JsonView(JsonViews.PersonnageWithStuff.class)
 	public Stuff getStuffById(@PathVariable Long id) {
 		return stuffService.getById(id);
 	}
 
-	@PostMapping("/")
+	@PostMapping("/{id}")
 	@JsonView(JsonViews.PersonnageWithStuff.class)
 	public Stuff createStuff(@RequestBody Stuff stuff) {
 		return stuffService.create(stuff);
 	}
 
-	@PutMapping("/")
+	@PutMapping("/{id}")
 	@JsonView(JsonViews.PersonnageWithStuff.class)
 	public Stuff updateStuff(@RequestBody Stuff stuff) {
 		return stuffService.update(stuff);
@@ -130,7 +125,7 @@ public class JoueurRestController {
 
 	// GESTION DE LA BOUTIQUE
 
-	@GetMapping("/boutique/gestion") // Ajouter un bouton de filtre pour s�parer les consommables de l'�quipement
+	@GetMapping("/boutique") // Ajouter un bouton de filtre pour s�parer les consommables de l'�quipement
 	@JsonView(JsonViews.Common.class)
 	public List<Boutique> getAllBoutique() {
 		return boutiqueService.getAll();
@@ -138,7 +133,7 @@ public class JoueurRestController {
 
 	// CONSOMMABLES
 
-	@GetMapping("/boutique/gestion/consommables")
+	@GetMapping("/boutique/consommables")
 	@JsonView(JsonViews.ConsommablesFromBoutique.class)
 	public List<Consommables> getAllConsommables() {
 		return boutiqueService.getAllConsommables();
@@ -146,7 +141,7 @@ public class JoueurRestController {
 
 	// EQUIPEMENT
 
-	@GetMapping("/boutique/gestion/equipement")
+	@GetMapping("/boutique/equipement")
 	@JsonView(JsonViews.EquipementFromBoutique.class)
 	public List<Equipement> getAllEquipement() {
 		return boutiqueService.getAllEquipement();

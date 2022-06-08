@@ -46,16 +46,6 @@ public class Personnage {
 	private Race race;
 	@JsonView(JsonViews.Common.class)
 	@Embedded
-	@AttributeOverrides({ @AttributeOverride(name = "id", column = @Column(name = "id_carac")),
-		@AttributeOverride(name = "force", column = @Column(name = "force_carac")),
-		@AttributeOverride(name = "dexterite", column = @Column(name = "dexterite_carac")),
-		@AttributeOverride(name = "charisme", column = @Column(name = "charisme_carac")),
-		@AttributeOverride(name = "sagesse", column = @Column(name = "sagesse_carac")),
-		@AttributeOverride(name = "intelligence", column = @Column(name = "intelligence_carac")),
-		@AttributeOverride(name = "constitution", column = @Column(name = "constitution_carac")) })
-	private Caracteristiques caracteristiques;
-	@JsonView(JsonViews.Common.class)
-	@Embedded
 	private Stats stats;
 	@JsonView(JsonViews.PersonnageWithStuff.class)
 	@Embedded
@@ -74,9 +64,9 @@ public class Personnage {
 //			@AttributeOverride(name = "product_owner", column = @Column(name = "product_owner_metier")) })
 //	@OneToOne
 //	@JoinColumn(name = "metier_id", foreignKey = @ForeignKey(name="personnage_metier_id_fk"))
-	@JsonView(JsonViews.Common.class)
-	@Enumerated(EnumType.STRING)
-	private Metiers metier;
+//	@JsonView(JsonViews.Common.class)
+//	@Enumerated(EnumType.STRING)
+//	private Metiers metier;
 	
 	public Personnage() {
 		
@@ -152,14 +142,6 @@ public class Personnage {
 
 	public void setRace(Race race) {
 		this.race = race;
-	}
-
-	public Caracteristiques getCaracteristique() {
-		return caracteristiques;
-	}
-
-	public void setCaracteristique(Caracteristiques caracteristiques) {
-		this.caracteristiques = caracteristiques;
 	}
 
 	public Stats getStats() {

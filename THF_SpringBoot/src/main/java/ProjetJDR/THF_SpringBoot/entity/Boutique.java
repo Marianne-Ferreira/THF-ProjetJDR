@@ -7,14 +7,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 public abstract class Boutique {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqBoutique")
+	@JsonView(JsonViews.Common.class)
 	protected Long id; 
+	@JsonView(JsonViews.Common.class)
 	protected String nomStuff; 
+	@JsonView(JsonViews.Common.class)
 	protected int prix; 
+	@JsonView(JsonViews.Common.class)
 	protected boolean isAvailable ;
 	
 	public Boutique () {
