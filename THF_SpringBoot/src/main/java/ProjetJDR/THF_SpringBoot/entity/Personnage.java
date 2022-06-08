@@ -46,16 +46,6 @@ public class Personnage {
 	private Race race;
 	@JsonView(JsonViews.Common.class)
 	@Embedded
-	@AttributeOverrides({ @AttributeOverride(name = "id", column = @Column(name = "id_carac")),
-		@AttributeOverride(name = "force", column = @Column(name = "force_carac")),
-		@AttributeOverride(name = "dexterite", column = @Column(name = "dexterite_carac")),
-		@AttributeOverride(name = "charisme", column = @Column(name = "charisme_carac")),
-		@AttributeOverride(name = "sagesse", column = @Column(name = "sagesse_carac")),
-		@AttributeOverride(name = "intelligence", column = @Column(name = "intelligence_carac")),
-		@AttributeOverride(name = "constitution", column = @Column(name = "constitution_carac")) })
-	private Caracteristiques caracteristiques;
-	@JsonView(JsonViews.Common.class)
-	@Embedded
 	private Stats stats;
 	@JsonView(JsonViews.PersonnageWithStuff.class)
 	@Embedded
@@ -64,16 +54,6 @@ public class Personnage {
 	@OneToOne
 	@JoinColumn(name = "stuff_id", foreignKey = @ForeignKey(name="personnage_stuff_id_fk"))
 	private Stuff stuff;
-//	@Embedded
-//	@AttributeOverrides({ @AttributeOverride(name = "id", column = @Column(name = "id_metier")),
-//			@AttributeOverride(name = "developpeur", column = @Column(name = "developpeur_metier")),
-//			@AttributeOverride(name = "rh", column = @Column(name = "rh_metier")),
-//			@AttributeOverride(name = "chef_projet", column = @Column(name = "chef_projet_metier")),
-//			@AttributeOverride(name = "lead_tech", column = @Column(name = "lead_tech_metier")),
-//			@AttributeOverride(name = "business_analyst", column = @Column(name = "business_analyst_metier")),
-//			@AttributeOverride(name = "product_owner", column = @Column(name = "product_owner_metier")) })
-//	@OneToOne
-//	@JoinColumn(name = "metier_id", foreignKey = @ForeignKey(name="personnage_metier_id_fk"))
 	@JsonView(JsonViews.Common.class)
 	@Enumerated(EnumType.STRING)
 	private Metiers metier;
@@ -152,14 +132,6 @@ public class Personnage {
 
 	public void setRace(Race race) {
 		this.race = race;
-	}
-
-	public Caracteristiques getCaracteristique() {
-		return caracteristiques;
-	}
-
-	public void setCaracteristique(Caracteristiques caracteristiques) {
-		this.caracteristiques = caracteristiques;
 	}
 
 	public Stats getStats() {
