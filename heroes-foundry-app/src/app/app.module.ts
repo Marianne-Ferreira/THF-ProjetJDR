@@ -27,6 +27,7 @@ import { MetierPersonnageComponent } from './metier-personnage/metier-personnage
 import { CompetencePersonnageComponent } from './competence-personnage/competence-personnage.component';
 import { AlignementPersonnageComponent } from './alignement-personnage/alignement-personnage.component';
 import { StuffPersonnageComponent } from './stuff-personnage/stuff-personnage.component';
+import { RecapPersonnageComponent } from './recap-personnage/recap-personnage.component';
 
 @NgModule({
   //Déclaration des modules auprès d'Angular
@@ -54,6 +55,7 @@ import { StuffPersonnageComponent } from './stuff-personnage/stuff-personnage.co
     CompetencePersonnageComponent,
     AlignementPersonnageComponent,
     StuffPersonnageComponent,
+    RecapPersonnageComponent,
   ],
   imports: [
     BrowserModule,

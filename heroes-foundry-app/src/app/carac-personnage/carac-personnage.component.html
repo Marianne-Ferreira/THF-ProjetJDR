@@ -8,9 +8,9 @@
   </h2>
 </div>
 
-<div class="mt-4 row p-3 d-flex justify-content-center">
+<div class="row p-3 d-flex justify-content-center">
   <div class="col-6 d-flex justify-content-center">
-    <p>
+    <p class="text-carac">
       Vous avez <span id="totalPoints">{{ totalPointsResult }}</span> points à
       répartir entre vos valeurs de caractéritiques. Le prix de chaque valeur de
       caractéristique est indiqué dans la table ci-dessous :
@@ -20,45 +20,45 @@
 
 <div class="row d-flex justify-content-center">
   <div class="col-3">
-    <table class="table">
+    <table class="override-table table">
       <thead>
         <tr>
-          <th scope="col">Valeur</th>
-          <th scope="col">Points</th>
+          <th class="override-th" scope="col">Valeur</th>
+          <th class="override-th" scope="col">Points</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>8</td>
-          <td>10</td>
+          <td class="override-td">8</td>
+          <td class="override-td">10</td>
         </tr>
         <tr>
-          <td>9</td>
-          <td>1</td>
+          <td class="override-td">9</td>
+          <td class="override-td">1</td>
         </tr>
         <tr>
-          <td>10</td>
-          <td>2</td>
+          <td class="override-td">10</td>
+          <td class="override-td">2</td>
         </tr>
         <tr>
-          <td>11</td>
-          <td>3</td>
+          <td class="override-td">11</td>
+          <td class="override-td">3</td>
         </tr>
         <tr>
-          <td>12</td>
-          <td>4</td>
+          <td class="override-td">12</td>
+          <td class="override-td">4</td>
         </tr>
         <tr>
-          <td>13</td>
-          <td>5</td>
+          <td class="override-td">13</td>
+          <td class="override-td">5</td>
         </tr>
         <tr>
-          <td>14</td>
-          <td>7</td>
+          <td class="override-td">14</td>
+          <td class="override-td">7</td>
         </tr>
         <tr>
-          <td>15</td>
-          <td>9</td>
+          <td class="override-td">15</td>
+          <td class="override-td">9</td>
         </tr>
       </tbody>
     </table>
@@ -67,9 +67,9 @@
 
 <div class="row d-flex justify-content-center">
   <div class="col-4">
-    <div class="row">
-      <div class="col-2"><label>FORCE</label></div>
-      <div class="col-2">
+    <div class="mt-3 row">
+      <div class="col-3"><label>FORCE</label></div>
+      <div class="col">
         <input
           [ngModel]="forceValue"
           (ngModelChange)="forceValueChange($event)"
@@ -80,9 +80,9 @@
         />
       </div>
     </div>
-    <div class="row">
-      <div class="col-2"><label>CHARISME</label></div>
-      <div class="col-2">
+    <div class="mt-3 row">
+      <div class="col-3"><label>CHARISME</label></div>
+      <div class="col">
         <input
           [ngModel]="charismeValue"
           (ngModelChange)="charismeValueChange($event)"
@@ -93,9 +93,9 @@
         />
       </div>
     </div>
-    <div class="row">
-      <div class="col-2"><label>SAGESSE</label></div>
-      <div class="col-2">
+    <div class="mt-3 row">
+      <div class="col-3"><label>SAGESSE</label></div>
+      <div class="col">
         <input
           [ngModel]="sagesseValue"
           (ngModelChange)="sagesseValueChange($event)"
@@ -108,9 +108,9 @@
     </div>
   </div>
   <div class="col-4">
-    <div class="row">
-      <div class="col-2"><label>INTELLIGENCE</label></div>
-      <div class="col-2">
+    <div class="mt-3 row">
+      <div class="col-3"><label>INTELLIGENCE</label></div>
+      <div class="col">
         <input
           [ngModel]="intelligenceValue"
           (ngModelChange)="intelligenceValueChange($event)"
@@ -121,9 +121,9 @@
         />
       </div>
     </div>
-    <div class="row">
-      <div class="col-2"><label>DEXTERITE</label></div>
-      <div class="col-2">
+    <div class="mt-3 row">
+      <div class="col-3"><label>DEXTERITE</label></div>
+      <div class="col">
         <input
           [ngModel]="dexteriteValue"
           (ngModelChange)="dexteriteValueChange($event)"
@@ -134,9 +134,9 @@
         />
       </div>
     </div>
-    <div class="row">
-      <div class="col-2"><label>CONSTITUTION</label></div>
-      <div class="col-2">
+    <div class="mt-3 row">
+      <div class="col-3"><label>CONSTITUTION</label></div>
+      <div class="col">
         <input
           [ngModel]="constitutionValue"
           (ngModelChange)="constitutionValueChange($event)"
