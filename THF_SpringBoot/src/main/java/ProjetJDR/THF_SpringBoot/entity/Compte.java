@@ -19,7 +19,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.fasterxml.jackson.annotation.JsonView;
 
 @MappedSuperclass
-public abstract class Compte implements UserDetails{
+public class Compte implements UserDetails{
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqCompte")
 	@JsonView(JsonViews.Common.class)

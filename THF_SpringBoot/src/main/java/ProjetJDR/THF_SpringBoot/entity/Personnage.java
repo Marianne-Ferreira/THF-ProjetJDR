@@ -74,9 +74,9 @@ public class Personnage {
 //			@AttributeOverride(name = "product_owner", column = @Column(name = "product_owner_metier")) })
 //	@OneToOne
 //	@JoinColumn(name = "metier_id", foreignKey = @ForeignKey(name="personnage_metier_id_fk"))
-	@JsonView(JsonViews.Common.class)
-	@Enumerated(EnumType.STRING)
-	private Metiers metier;
+//	@JsonView(JsonViews.Common.class)
+//	@Enumerated(EnumType.STRING)
+//	private Metiers metier;
 	
 	public Personnage() {
 		
