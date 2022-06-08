@@ -1,1 +1,153 @@
-<p>recap-personnage works!</p>
+<div class="d-flex">
+  <img class="col-4 d-flex justify-content-left align-items-center" src="../assets/Heroes_Foundy_Logo_sans_fond.png"/>
+  <h2 class="col-8 d-flex justify-content-left align-items-center">Tadaa voici ton personnage !</h2>
+</div>
+
+<div class="mx-4 row d-flex">
+<div class="col-6 perso-input"><p>Nomduperso</p></div>
+
+<div class="d-flex justify-content-evenly col-6">
+  <div class="perso-input"><p>Alduperso</p></div>
+<div class="perso-input"><p>Genre</p></div>
+</div>
+</div>
+
+<div class="justify-content-center row p-3">
+  <div class=" col-3">
+    <a class="link-card" routerLink="/display-personnage" routerLinkActive="active">
+      <div class="glass card card-hover">
+        <div class="card-body">
+            <h5 class="card-title d-flex justify-content-center">Humain</h5>
+            <img src="../assets/img/humain.jpg">
+        </div>
+    </div>
+  </a>
+</div>
+  <div class="col-3 cards">
+    <a
+      class="link-card"
+      routerLink="/display-personnage"
+      routerLinkActive="active"
+    >
+      <div class="glass card card-hover">
+        <div class="card-body">
+          <h5 class="card-title d-flex justify-content-center">Développeur</h5>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="text-comp row d-flex justify-content-center">
+  <div class="col-5">
+    <div class="mt-3 row">
+      <div class="col-3"><label>FORCE</label></div>
+      <div class="col">
+        <span>10</span>
+      </div>
+    </div>
+    <div class="mt-3 row">
+      <div class="col-3"><label>CHARISME</label></div>
+      <div class="col">
+        <span>14</span>
+      </div>
+    </div>
+    <div class="mt-3 row">
+      <div class="col-3"><label>SAGESSE</label></div>
+      <div class="col">
+        <span>12</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="mt-3 row">
+      <div class="col-3"><label>INTELLIGENCE</label></div>
+      <div class="col">
+        <span>8</span>
+      </div>
+    </div>
+    <div class="mt-3 row">
+      <div class="col-3"><label>DEXTERITE</label></div>
+      <div class="col">
+        <span>16</span>
+      </div>
+    </div>
+    <div class="mt-3 row">
+      <div class="col-3"><label>CONSTITUTION</label></div>
+      <div class="col">
+        <span>10</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mb-5 d-flex justify-content-evenly">
+  <a class="user-go d-flex justify-content-center p-3">Arcanes(INT)</a>
+  <a class="user-go d-flex justify-content-center p-3">Survie (SAG)</a>
+</div>
+
+<div class="justify-content-center row p-3">
+  <div class="col-3">
+    <a
+      class="link-card"
+      routerLink="/display-personnage"
+      routerLinkActive="active"
+    >
+      <div class="glass card card-hover">
+        <div class="card-body">
+          <h5 class="card-title d-flex justify-content-center">Epée longue</h5>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-3">
+    <a
+      class="link-card"
+      routerLink="/display-personnage"
+      routerLinkActive="active"
+    >
+      <div class="glass card card-hover">
+        <div class="card-body">
+          <h5 class="card-title d-flex justify-content-center">Dague</h5>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-3">
+    <a
+      class="link-card"
+      routerLink="/display-personnage"
+      routerLinkActive="active"
+    >
+      <div class="glass card card-hover">
+        <div class="card-body">
+          <h5 class="card-title d-flex justify-content-center">Javeline</h5>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-3">
+    <a
+      class="link-card"
+      routerLink="/display-personnage"
+      routerLinkActive="active"
+    >
+      <div class="glass card card-hover">
+        <div class="card-body">
+          <h5 class="card-title d-flex justify-content-center">Hache</h5>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center p-3">
+  <p class="text-carac">
+    Tu as <span>XX</span> gold.
+  </p>
+</div>
+
+<div class="mb-5 d-flex justify-content-evenly">
+  <a routerLink="/home-user" routerLinkActive="active" class="user-create d-flex justify-content-center p-3">Valider</a>
+  <a routerLink="/home-user" routerLinkActive="active" class="override-user-create user-create d-flex justify-content-center p-3">Annuler</a>
+</div>

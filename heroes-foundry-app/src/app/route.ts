@@ -1,3 +1,7 @@
+import { CreateStuffComponent } from './create-stuff/create-stuff.component';
+import { BoutiqueUserComponent } from './boutique-user/boutique-user.component';
+import { DisplayPersonnageComponent } from './display-personnage/display-personnage.component';
+import { RecapPersonnageComponent } from './recap-personnage/recap-personnage.component';
 import { StuffPersonnageComponent } from './stuff-personnage/stuff-personnage.component';
 import { AlignementPersonnageComponent } from './alignement-personnage/alignement-personnage.component';
 import { CompetencePersonnageComponent } from './competence-personnage/competence-personnage.component';
@@ -25,17 +29,19 @@ export const routes: Routes = [
   { path: 'personnage-user', component: PersonnageUserComponent },
   { path: 'gestion-boutique', component: GestionBoutiqueComponent },
   { path: 'display-stuff', component: DisplayStuffComponent },
-  { path: 'create-stuff', component: CreateAccountComponent },
+  { path: 'create-stuff', component: CreateStuffComponent },
   { path: 'home-user', component: HomeUserComponent },
   { path: 'nom-personnage', component: NomPersonnageComponent },
   { path: 'genre-personnage', component: GenrePersonnageComponent },
   { path: 'race-personnage', component: RacePersonnageComponent },
   { path: 'metier-personnage', component: MetierPersonnageComponent },
-  { path: 'display-personnage', component: DisplayStuffComponent },
+  { path: 'display-personnage', component: DisplayPersonnageComponent },
+  { path: 'boutique-user', component: BoutiqueUserComponent },
   { path: 'carac-personnage', component: CaracPersonnageComponent },
   { path: 'competence-personnage', component: CompetencePersonnageComponent },
   { path: 'alignement-personnage', component: AlignementPersonnageComponent },
   { path: 'stuff-personnage', component: StuffPersonnageComponent },
+  { path: 'recap-personnage', component: RecapPersonnageComponent },
   { path: 'a-propos', component: AProposComponent },
   { path: 'mdp-oublie', component: PasswordForgotComponent },
   { path: 'create-account', component: CreateAccountComponent },

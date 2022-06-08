@@ -28,6 +28,7 @@ import { CompetencePersonnageComponent } from './competence-personnage/competenc
 import { AlignementPersonnageComponent } from './alignement-personnage/alignement-personnage.component';
 import { StuffPersonnageComponent } from './stuff-personnage/stuff-personnage.component';
 import { RecapPersonnageComponent } from './recap-personnage/recap-personnage.component';
+import { BoutiqueUserComponent } from './boutique-user/boutique-user.component';
 
 @NgModule({
   //Déclaration des modules auprès d'Angular
@@ -56,6 +57,7 @@ import { RecapPersonnageComponent } from './recap-personnage/recap-personnage.co
     AlignementPersonnageComponent,
     StuffPersonnageComponent,
     RecapPersonnageComponent,
+    BoutiqueUserComponent,
   ],
   imports: [
     BrowserModule,
