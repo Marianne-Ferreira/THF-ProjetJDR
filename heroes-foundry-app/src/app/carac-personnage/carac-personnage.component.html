@@ -5,7 +5,6 @@
 
 <div class="row p-3 d-flex justify-content-center">
   <div class="col-6 d-flex justify-content-center">
-      points à répartir entre vos valeurs de caractéritiques. Le prix de chaque
     <p class="text-carac">
       Vous avez <span id="totalPoints">{{ totalPointsResult }}</span> points à
       répartir entre vos valeurs de caractéritiques. Le prix de chaque valeur de
@@ -26,7 +25,7 @@
       <tbody>
         <tr>
           <td class="override-td">8</td>
-          <td class="override-td">10</td>
+          <td class="override-td">0</td>
         </tr>
         <tr>
           <td class="override-td">9</td>
@@ -145,49 +144,45 @@
     </div>
   </div>
 </div> -->
+<div class="my-4 row d-flex justify-content-center">
+<div class="col-3">
+  <label class="mx-3">FORCE</label>
+  <input
+    [(ngModel)]="forceValue"
+    (ngModelChange)="forceValueChange($event)"
+    type="number"
+    min="8"
+    max="15"
+    value="8"
+  />
+</div>
+<div class="col-3">
+  <label class="mx-3">CHARISME</label>
+  <input
+    [(ngModel)]="charismeValue"
+    (ngModelChange)="charismeValueChange($event)"
+    type="number"
+    min="8"
+    max="15"
+    value="8"
+  />
+</div>
+<div class="col-3">
+  <label class="mx-3">SAGESSE</label>
+  <input
+    [(ngModel)]="sagesseValue"
+    (ngModelChange)="sagesseValueChange($event)"
+    type="number"
+    min="8"
+    max="15"
+    value="8"
+  />
+</div>
+</div>
 
-<div class="row d-flex justify-content-center">
+<div class="my-4 row d-flex justify-content-center">
   <div class="col-3">
-    <label>FORCE</label>
-    <input
-      [(ngModel)]="forceValue"
-      (ngModelChange)="forceValueChange($event)"
-      type="number"
-      min="8"
-      max="15"
-      value="8"
-    />
-    <input type="button" value="Ok" id="forceValue" />
-  </div>
-
- <div class="col-3">
-    <label>CHARISME</label>
-    <input
-      [(ngModel)]="charismeValue"
-      (ngModelChange)="charismeValueChange($event)"
-      type="number"
-      min="8"
-      max="15"
-      value="8"
-    />
-    <input type="button" value="Ok" id="charismeValue" />
-  </div>
-
-  <div class="col-3">
-    <label>SAGESSE</label>
-    <input
-      [(ngModel)]="sagesseValue"
-      (ngModelChange)="sagesseValueChange($event)"
-      type="number"
-      min="8"
-      max="15"
-      value="8"
-    />
-    <input type="button" value="Ok" id="sagesseValue" />
-  </div>
-
-  <div class="col-3">
-    <label>INTELLIGENCE</label>
+    <label class="mx-3">INTELLIGENCE</label>
     <input
       [(ngModel)]="intelligenceValue"
       (ngModelChange)="intelligenceValueChange($event)"
@@ -196,11 +191,9 @@
       max="15"
       value="8"
     />
-    <input type="button" value="Ok" id="intelligenceValue" />
   </div>
-
   <div class="col-3">
-    <label>DEXTERITE</label>
+    <label class="mx-3">DEXTERITE</label>
     <input
       [(ngModel)]="dexteriteValue"
       (ngModelChange)="dexteriteValueChange($event)"
@@ -209,11 +202,9 @@
       max="15"
       value="8"
     />
-    <input type="button" value="Ok" id="dexteriteValue" />
   </div>
-
   <div class="col-3">
-    <label>CONSTITUTION</label>
+    <label class="mx-3">CONSTITUTION</label>
     <input
       [(ngModel)]="constitutionValue"
       (ngModelChange)="constitutionValueChange($event)"
@@ -222,8 +213,8 @@
       max="15"
       value="8"
     />
-    <input type="button" value="Ok" id="constitutionValue" />
   </div>
+</div>
 
   <div class="mx-5 mt-3 row d-flex justify-content-end">
     <div class="col-2">

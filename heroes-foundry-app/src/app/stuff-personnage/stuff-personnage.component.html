@@ -10,202 +10,25 @@
 
 <div class="row p-3 d-flex justify-content-center">
   <div class="col-6 text-comp">
-    <p class="row">Tu peux choisir 1 arme, 1 armure et 2 consommables.</p>
+    <p class="row">Tu peux choisir 1 objet.</p>
     <p class="ita mt-3 row">Choisis avec discernement ...</p>
   </div>
 </div>
 
-<div class="justify-content-center row p-3">
-  <div class="col-3">
-    <a
-      class="link-card"
-      routerLink="/display-personnage"
-      routerLinkActive="active"
-    >
-      <div class="glass card card-hover">
-        <div class="card-body">
-          <h5 class="card-title d-flex justify-content-center">Epée longue</h5>
-        </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-3">
-    <a
-      class="link-card"
-      routerLink="/display-personnage"
-      routerLinkActive="active"
-    >
-      <div class="glass card card-hover">
-        <div class="card-body">
-          <h5 class="card-title d-flex justify-content-center">Dague</h5>
-        </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-3">
-    <a
-      class="link-card"
-      routerLink="/display-personnage"
-      routerLinkActive="active"
-    >
-      <div class="glass card card-hover">
-        <div class="card-body">
-          <h5 class="card-title d-flex justify-content-center">Javeline</h5>
-        </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-3">
-    <a
-      class="link-card"
-      routerLink="/display-personnage"
-      routerLinkActive="active"
-    >
-      <div class="glass card card-hover">
-        <div class="card-body">
-          <h5 class="card-title d-flex justify-content-center">Hache</h5>
-        </div>
-      </div>
-    </a>
-  </div>
-</div>
-
-<div class="justify-content-center row p-3">
-  <div class="col-3">
-    <a
-      class="link-card"
-      routerLink="/display-personnage"
-      routerLinkActive="active"
-    >
-      <div class="glass card card-hover">
-        <div class="card-body">
-          <h5 class="card-title d-flex justify-content-center">Armure de cuir</h5>
-        </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-3">
-    <a
-      class="link-card"
-      routerLink="/display-personnage"
-      routerLinkActive="active"
-    >
-      <div class="glass card card-hover">
-        <div class="card-body">
-          <h5 class="card-title d-flex justify-content-center">Armure cloutée</h5>
-        </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-3">
-    <a
-      class="link-card"
-      routerLink="/display-personnage"
-      routerLinkActive="active"
-    >
-      <div class="glass card card-hover">
-        <div class="card-body">
-          <h5 class="card-title d-flex justify-content-center">Côte maille</h5>
-        </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-3">
-    <a
-      class="link-card"
-      routerLink="/display-personnage"
-      routerLinkActive="active"
-    >
-      <div class="glass card card-hover">
-        <div class="card-body">
-          <h5 class="card-title d-flex justify-content-center">
-          </h5>
-        </div>
-      </div>
-    </a>
-
+<div class="d-flex justify-content-center">
     <select [(ngModel)] = "stuff">
       <option value="EpeeLongue">Epee Longue</option>
       <option value="Dague">Dague</option>
       <option value="Javeline">Javeline</option>
       <option value="Hache">Hache</option>
-    </select>
-
-    <select [(ngModel)] = "stuff">
       <option value="ArmureCuir">ArmureCuir</option>
       <option value="ArmureCloutee">ArmureCloutee</option>
       <option value="CoteMaille">CoteMaille</option>
-    </select>
-
-    <select [(ngModel)] = "stuff">
       <option value="PotionSoin">PotionSoin</option>
       <option value="PierreTonnerre">PierreTonnerre</option>
       <option value="Poison">Poison</option>
     </select>
-
   </div>
-
-  <div class="justify-content-center row p-3">
-    <div class="col-3">
-      <a
-        class="link-card"
-        routerLink="/display-personnage"
-        routerLinkActive="active"
-      >
-        <div class="glass card card-hover">
-          <div class="card-body">
-            <h5 class="card-title d-flex justify-content-center">Potion de soins</h5>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="col-3">
-      <a
-        class="link-card"
-        routerLink="/display-personnage"
-        routerLinkActive="active"
-      >
-        <div class="glass card card-hover">
-          <div class="card-body">
-            <h5 class="card-title d-flex justify-content-center">
-              Pierre tonerre
-            </h5>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="col-3">
-      <a
-        class="link-card"
-        routerLink="/display-personnage"
-        routerLinkActive="active"
-      >
-        <div class="glass card card-hover">
-          <div class="card-body">
-            <h5 class="card-title d-flex justify-content-center">
-              Poison
-            </h5>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="col-3">
-      <a
-        class="link-card"
-        routerLink="/display-personnage"
-        routerLinkActive="active"
-      >
-        <div class="glass card card-hover">
-          <div class="card-body">
-            <h5 class="card-title d-flex justify-content-center">
-              Infusion au curcuma
-            </h5>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-
 
 <div class="mx-5 mt-3 row d-flex justify-content-end">
   <div class="col-2">

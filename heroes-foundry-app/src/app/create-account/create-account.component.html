@@ -9,40 +9,39 @@
 </div>
 
 <div class="d-flex justify-content-center row">
-  <div class="d-flex justify-content-center col-8">
+  <div class="d-flex justify-content-center col-6">
     <form (ngSubmit)="submit()" [formGroup]="form">
-      <input class="user-input" formControlName="pseudo" placeholder="Pseudo" />
+
+
+      <input class="mb-4 user-input" formControlName="pseudo" placeholder="Pseudo" />
       <ng-container *ngIf="form.get('pseudo')?.hasError('required')">
-        *champ obligatoire
       </ng-container>
       <ng-container *ngIf="form.get('pseudo')?.hasError('loginExist')">
         *ce pseudo est deja utilisé
       </ng-container>
 
-      <input class="user-input" formControlName="nom" placeholder="Nom" />
+      <input class="mb-4 user-input" formControlName="nom" placeholder="Nom" />
       <div
         *ngIf="form.get('nom')?.dirty && form.get('nom')?.invalid"
         class="alert alert-danger"
       >
-        *champ obligatoire
       </div>
 
-      <input class="user-input" formControlName="prenom" placeholder="Prenom" />
+      <input class="mb-4 user-input" formControlName="prenom" placeholder="Prenom" />
       <div
         *ngIf="form.get('prenom')?.dirty && form.get('prenom')?.invalid"
         class="alert alert-danger"
       >
-        *champ obligatoire
       </div>
 
       <input
-        class="user-input"
+        class="mb-4 user-input"
         formControlName="login"
         placeholder="Adresse mail"
       />
       <ng-container formGroupName="passwordGroup">
         <input
-          class="user-input"
+          class="mb-4 user-input"
           formControlName="password"
           placeholder="Mot de passe"
         />
@@ -53,10 +52,9 @@
           "
           class="alert alert-danger"
         >
-          *champ obligatoire
         </div>
         <input
-          class="user-input"
+          class="mb-4 user-input"
           formControlName="confirm"
           placeholder="Confirmation Mot de passe"
         />
@@ -69,9 +67,15 @@
           Les 2 mots de passe sont differents
         </div>
       </ng-container>
-      <button class="user-create" type="submit">
-        Créer un compte
-      </button>
+      <div class="row">
+
+      <div class="d-flex justify-content-center col-6">
+        <button class="mb-4 user-create" type="submit">Créer un compte</button>
+      </div>
+
+    </div>
     </form>
+
+
   </div>
 </div>
