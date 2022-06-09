@@ -20,8 +20,8 @@ public class Caracteristiques {
 	private int sagesse;
 	private int intelligence;
 	private int constitution;
-	@Enumerated(EnumType.STRING)
-	private Competences competences;
+//	@Enumerated(EnumType.STRING)
+//	private Competences competences;
 	
 	public Caracteristiques() {
 		
@@ -75,13 +75,13 @@ public class Caracteristiques {
 		this.constitution = constitution;
 	}
 
-	public Competences getCompetences() {
-		return competences;
-	}
-
-	public void setCompetences(Competences competences) {
-		this.competences = competences;
-	}
+//	public Competences getCompetences() {
+//		return competences;
+//	}
+//
+//	public void setCompetences(Competences competences) {
+//		this.competences = competences;
+//	}
 
 	@Override
 	public int hashCode() {
