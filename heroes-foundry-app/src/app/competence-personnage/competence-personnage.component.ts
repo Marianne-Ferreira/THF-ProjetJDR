@@ -11,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class CompetencePersonnageComponent implements OnInit {
   personnage: Personnage = JSON.parse(sessionStorage.getItem('personnage')!);
   competence: string = 'mesCompetences'
+
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -41,24 +43,24 @@ export class CompetencePersonnageComponent implements OnInit {
 	// 	}
 	// }
 
-  // public BonusCaractéristique() {
-    //
-    //	 if (competence.equals("Arcanes") || competence.equals("Intimidation") || competence.equals("Investigation")
-    //				|| competence.equals("Intimidation") || competence.equals("Histoire")) {
-    //			IntelligenceValue = IntelligenceValue + 2;
-    //		}
-    //		else if (competence.equals("Athletisme")) {
-    //			ForceValue = ForceValue + 2;
-    //		}
-    //		else if (competence.equals("Representation") || competence.equals("Tromperie") || competence.equals("Persuasion")) {
-    //			CharismeValue = CharismeValue + 2;
-    //		}
-    //		else if (competence.equals("Survie") || competence.equals("Perspicacite") || competence.equals("Perception")) {
-    //			SagesseValue = SagesseValue + 2;
-    //		}
-    //		else if (competence.equals("Escamotage") || competence.equals("Discretion")) {
-    //			DexteriteValue = DexteriteValue + 2;
-    //		}
+  //public BonusCaractéristique() {
+
+    	//  if (this.personnage.competence == "Arcanes" || this.personnage.competence == "Intimidation" || this.personnage.competence == "Investigation"
+    	// 			|| this.personnage.competence == "Intimidation" || this.personnage.competence == "Histoire") {
+    	// 		this.totalPointsIntelligence = this.totalPointsIntelligence + 2;
+    		// }
+    		// else if (competence.equals("Athletisme")) {
+    		// 	ForceValue = ForceValue + 2;
+    		// }
+    		// else if (competence.equals("Representation") || competence.equals("Tromperie") || competence.equals("Persuasion")) {
+    		// 	CharismeValue = CharismeValue + 2;
+    		// }
+    		// else if (competence.equals("Survie") || competence.equals("Perspicacite") || competence.equals("Perception")) {
+    		// 	SagesseValue = SagesseValue + 2;
+    		// }
+    		// else if (competence.equals("Escamotage") || competence.equals("Discretion")) {
+    		// 	DexteriteValue = DexteriteValue + 2;
+    		// }
     //	}
 
   saveCompetence() {

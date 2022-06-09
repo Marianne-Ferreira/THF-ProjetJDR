@@ -19,10 +19,12 @@ export class RecapPersonnageComponent implements OnInit {
   save(){
     this.personnageService.createPersonnage(this.personnage).subscribe(() => {
       this.router.navigateByUrl('/home-user');
+
     });
 
 
     console.log(this.personnage.alignement)
   }
+
 
 }
