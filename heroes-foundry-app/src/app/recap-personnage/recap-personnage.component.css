@@ -49,3 +49,7 @@
     filter: none;
 
   }
+
+  span .force{
+    color: aqua;
+  }
