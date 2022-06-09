@@ -5,10 +5,16 @@ import java.util.Collection;
 import java.util.Objects;
 
 import javax.annotation.security.RolesAllowed;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -18,7 +24,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-@MappedSuperclass
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "type_compte")
+@Table(name = "compte")
+@SequenceGenerator(sequenceName = "seq_compte", name = "seqCompteJPA", allocationSize = 1, initialValue = 1)
+
 public class Compte implements UserDetails{
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqCompte")
