@@ -1,7 +1,9 @@
+import { AdminService } from './../services/admin.service';
 import { Consommables } from './../model/consommables';
 import { Equipement } from './../model/equipement';
 import { Stuff } from './../model/stuff';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-gestion-boutique',
@@ -15,11 +17,17 @@ export class GestionBoutiqueComponent implements OnInit {
   message = '';
   showMessage = false;
 
-  constructor() { }
+  constructor(
+    private adminService : AdminService,
+    private aR: ActivatedRoute
+  ) {}
 
-  ngOnInit(): void {
-
-
+  initConsommables(consommables : Consommables) {
+    this.adminService.getAllConsommables(consommables).subscribe((datas) => {
+      this.consommables = datas;
+    });
   }
+
+  ngOnInit(): void {}
 
 }
