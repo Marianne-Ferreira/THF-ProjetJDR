@@ -1,3 +1,4 @@
+import { CompetencePersonnageComponent } from './../competence-personnage/competence-personnage.component';
 import { Stats } from './stats';
 import { Stuff } from './stuff';
 
@@ -11,8 +12,10 @@ export class Personnage {
     private _genre?: string,
     private _alignement?: string,
     private _race?: string,
+    private _competence?: string,
     private _stats?: Stats, //CREER LES MODELS SUIVANTS SVP
     private _stuff?: Stuff,
+    private _metier?: string,
   ) {}
 
   get id(): number | undefined {
@@ -93,6 +96,21 @@ export class Personnage {
 
   set stuff(value: Stuff | undefined) {
     this._stuff = value;
+  }
 
+  get competence(): string | undefined {
+    return this._competence;
+  }
+
+  set competence(value: string | undefined) {
+    this._competence = value;
+  }
+
+  get metier(): string | undefined {
+    return this._metier;
+  }
+
+  set metier(value: string | undefined) {
+    this._metier = value;
   }
 }

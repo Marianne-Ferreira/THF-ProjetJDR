@@ -60,19 +60,21 @@ export class JoueurService {
   }
 
   createPersonnage(personnage: Personnage) {
+
     let personnageJson = {
       id: personnage.id,
-      gold: personnage.gold,
+      gold: 5000,
       nom: personnage.nom,
-      prenom: personnage.prenom,
-      age: personnage.age,
+      prenom: '',
+      age: 0,
       genre: personnage.genre,
       alignement: personnage.alignement,
       race: personnage.race,
       stats: personnage.stats,
       stuff: personnage.stuff,
     };
-    return this.httpClient.post<Personnage>(this.url, personnageJson);
+    console.log(personnageJson)
+    return this.httpClient.post<Personnage>(this.url + '/personnage', personnageJson);
   }
 
   deletePersonnageById(id: number): Observable<void> {

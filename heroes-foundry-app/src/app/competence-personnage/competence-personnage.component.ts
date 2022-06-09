@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { Personnage } from './../model/personnage';
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-competence-personnage',
   templateUrl: './competence-personnage.component.html',
@@ -9,13 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompetencePersonnageComponent implements OnInit {
   personnage: Personnage = JSON.parse(sessionStorage.getItem('personnage')!);
-competence: string = 'mesCompetences'
+  competence: string = 'mesCompetences'
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-  // public void ChoixCompetences() {
-	// 	if (metier.equals("Developpeur")) {
+
+
+  // ChoixCompetences() {
+	// 	if (this.personnage.metier == ("Developpeur")) {
 	// 		System.out.println("Vous pouvez choisir 2 compétences parmi ces 4 : " + Competences.Arcanes
 	// 				+ Competences.Survie + Competences.Escamotage + Competences.Perspicacite);
 	// 	}
@@ -59,7 +62,7 @@ competence: string = 'mesCompetences'
     //	}
 
   saveCompetence() {
-
+    this.personnage.competence=this.competence;
     sessionStorage.setItem('personnage', JSON.stringify(this.personnage));
     this.router.navigate(['/alignement-personnage']);
   }

@@ -4,20 +4,21 @@
 </div>
 
 <div class="mx-4 row d-flex">
-<div class="col-6 perso-input"><p>Nomduperso</p></div>
+<div class="col-6 perso-input"><p>{{personnage.nom}}</p></div>
 
 <div class="d-flex justify-content-evenly col-6">
-  <div class="perso-input"><p>Alduperso</p></div>
-<div class="perso-input"><p>Genre</p></div>
+  <div class="perso-input"><p>{{personnage.alignement}}</p></div>
+<div class="perso-input" ><p></p></div>
 </div>
 </div>
 
 <div class="justify-content-center row p-3">
   <div class=" col-3">
-    <a class="link-card" routerLink="/display-personnage" routerLinkActive="active">
+    <a class="link-card" >
       <div class="glass card card-hover">
         <div class="card-body">
-            <h5 class="card-title d-flex justify-content-center">Humain</h5>
+            <h5 class="card-title d-flex justify-content-center" >
+              </h5>
             <img src="../assets/img/humain.jpg">
         </div>
     </div>
@@ -26,12 +27,11 @@
   <div class="col-3 cards">
     <a
       class="link-card"
-      routerLink="/display-personnage"
-      routerLinkActive="active"
+
     >
       <div class="glass card card-hover">
         <div class="card-body">
-          <h5 class="card-title d-flex justify-content-center">Développeur</h5>
+          <h5 class="card-title d-flex justify-content-center"></h5>
         </div>
       </div>
     </a>
@@ -82,8 +82,8 @@
 </div>
 
 <div class="mb-5 d-flex justify-content-evenly">
-  <a class="user-go d-flex justify-content-center p-3">Arcanes(INT)</a>
-  <a class="user-go d-flex justify-content-center p-3">Survie (SAG)</a>
+  <a class="user-go d-flex justify-content-center p-3" >Arcanes(INT)</a>
+  <!-- <a class="user-go d-flex justify-content-center p-3">Survie (SAG)</a> -->
 </div>
 
 <div class="justify-content-center row p-3">
@@ -95,7 +95,7 @@
     >
       <div class="glass card card-hover">
         <div class="card-body">
-          <h5 class="card-title d-flex justify-content-center">Epée longue</h5>
+          <h5 class="card-title d-flex justify-content-center" ></h5>
         </div>
       </div>
     </a>
@@ -108,7 +108,7 @@
     >
       <div class="glass card card-hover">
         <div class="card-body">
-          <h5 class="card-title d-flex justify-content-center">Dague</h5>
+          <h5 class="card-title d-flex justify-content-center" ></h5>
         </div>
       </div>
     </a>
@@ -121,20 +121,7 @@
     >
       <div class="glass card card-hover">
         <div class="card-body">
-          <h5 class="card-title d-flex justify-content-center">Javeline</h5>
-        </div>
-      </div>
-    </a>
-  </div>
-  <div class="col-3">
-    <a
-      class="link-card"
-      routerLink="/display-personnage"
-      routerLinkActive="active"
-    >
-      <div class="glass card card-hover">
-        <div class="card-body">
-          <h5 class="card-title d-flex justify-content-center">Hache</h5>
+          <h5 class="card-title d-flex justify-content-center" ></h5>
         </div>
       </div>
     </a>
@@ -143,11 +130,11 @@
 
 <div class="d-flex justify-content-center p-3">
   <p class="text-carac">
-    Tu as <span>XX</span> gold.
+    Tu as <span>5 000</span> gold.
   </p>
 </div>
 
 <div class="mb-5 d-flex justify-content-evenly">
-  <a routerLink="/home-user" routerLinkActive="active" class="user-create d-flex justify-content-center p-3">Valider</a>
+  <button class="user-create d-flex justify-content-center p-3" (click)="save()">Valider</button>
   <a routerLink="/home-user" routerLinkActive="active" class="override-user-create user-create d-flex justify-content-center p-3">Annuler</a>
 </div>

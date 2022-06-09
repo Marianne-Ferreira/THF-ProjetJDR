@@ -21,7 +21,7 @@ genre: string = 'monGenre';
 
 
   saveGenre() {
-
+    this.personnage.genre=this.genre;
     sessionStorage.setItem('personnage', JSON.stringify(this.personnage));
     this.router.navigate(['/race-personnage']);
   }

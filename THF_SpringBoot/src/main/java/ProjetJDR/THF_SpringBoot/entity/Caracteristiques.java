@@ -8,17 +8,23 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
 
-@Entity
+import com.fasterxml.jackson.annotation.JsonView;
+
+
 @Embeddable
 public class Caracteristiques {
 
-	@Id
-	private Long id;
+	@JsonView(JsonViews.Common.class)
 	private int force; 
+	@JsonView(JsonViews.Common.class)
 	private int dexterite;
+	@JsonView(JsonViews.Common.class)
 	private int charisme;
+	@JsonView(JsonViews.Common.class)
 	private int sagesse;
+	@JsonView(JsonViews.Common.class)
 	private int intelligence;
+	@JsonView(JsonViews.Common.class)
 	private int constitution;
 //	@Enumerated(EnumType.STRING)
 //	private Competences competences;
@@ -83,22 +89,7 @@ public class Caracteristiques {
 //		this.competences = competences;
 //	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Caracteristiques other = (Caracteristiques) obj;
-		return Objects.equals(id, other.id);
-	}
+	
 	
 	
 }

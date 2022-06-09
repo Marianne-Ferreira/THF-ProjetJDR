@@ -18,7 +18,7 @@ export class MetierPersonnageComponent implements OnInit {
   }
 
   saveMetier() {
-
+    this.personnage.metier=this.metier;
     sessionStorage.setItem('personnage', JSON.stringify(this.personnage));
     this.router.navigate(['/carac-personnage']);
   }

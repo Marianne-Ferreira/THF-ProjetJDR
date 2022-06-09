@@ -21,6 +21,7 @@ showMessage = false;
   ) {}
 
   initPersonnage() {
+    console.log('toto')
     this.joueurService.getAllPersonnages().subscribe((datas) => {
       this.personnages = datas;
     });

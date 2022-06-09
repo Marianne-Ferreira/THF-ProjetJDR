@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class RacePersonnageComponent implements OnInit {
   personnage: Personnage = JSON.parse(sessionStorage.getItem('personnage')!);
   race: string='maRace';
-  
+
   constructor(
     private router: Router) { }
 
@@ -19,7 +19,7 @@ export class RacePersonnageComponent implements OnInit {
 
 
   saveRace() {
-
+    this.personnage.race=this.race;
     sessionStorage.setItem('personnage', JSON.stringify(this.personnage));
     this.router.navigate(['/metier-personnage']);
   }

@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./nom-personnage.component.css']
 })
 export class NomPersonnageComponent implements OnInit {
-personnage : Personnage = new Personnage();
-
+// personnage : Personnage = new Personnage();
+nom : string ='';
   constructor(
     private router: Router) {
   }
@@ -20,8 +20,12 @@ personnage : Personnage = new Personnage();
 
 saveNom() {
     let personnage = {
-      nom : this.personnage.nom,
+      nom : this.nom,
+      genre: '',
+      metier:'',
+      alignement:'',
     };
+    console.log(this.nom)
     sessionStorage.setItem('personnage', JSON.stringify(personnage));
     this.router.navigate(['/genre-personnage']);
   }

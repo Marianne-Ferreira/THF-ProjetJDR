@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit, NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 import { Personnage } from '../model/personnage';
+import { Stats } from '../model/stats';
 
 @Component({
   selector: 'app-carac-personnage',
@@ -10,7 +11,7 @@ import { Personnage } from '../model/personnage';
 })
 export class CaracPersonnageComponent implements OnInit {
   personnage: Personnage = JSON.parse(sessionStorage.getItem('personnage')!);
-
+  stats: Stats = new Stats;
 
   totalPointsResult = 27;
   totalPointsForce = 0;
@@ -181,7 +182,7 @@ export class CaracPersonnageComponent implements OnInit {
 
 // Passage des infos au back
   saveCarac(){//voir l'url pour passer les infos
-
+    this.personnage.stats=this.stats;
     let carac = {
         force : this.forceValue,
       charisme : this.charismeValue,

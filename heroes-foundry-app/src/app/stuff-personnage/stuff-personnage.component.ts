@@ -1,3 +1,5 @@
+import { JoueurService } from './../services/joueur.service';
+import { Stuff } from './../model/stuff';
 import { Router } from '@angular/router';
 import { Personnage } from './../model/personnage';
 import { Component, OnInit } from '@angular/core';
@@ -9,14 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StuffPersonnageComponent implements OnInit {
   personnage: Personnage = JSON.parse(sessionStorage.getItem('personnage')!);
-  stuff: string = 'monStuff';
+  stuff: Stuff = new Stuff;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private stuffService : JoueurService) { }
 
   ngOnInit(): void {
   }
   saveStuff() {
-
+    this.personnage.stuff=this.stuff;
     sessionStorage.setItem('personnage', JSON.stringify(this.personnage));
     this.router.navigate(['/recap-personnage']);
   }

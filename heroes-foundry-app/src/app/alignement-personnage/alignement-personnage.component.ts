@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class AlignementPersonnageComponent implements OnInit {
   personnage: Personnage = JSON.parse(sessionStorage.getItem('personnage')!);
   alignement: string = 'monAlignement';
-  
+
   constructor(private router: Router) { }
 
 
@@ -18,7 +18,8 @@ export class AlignementPersonnageComponent implements OnInit {
   }
 
   saveAlignement() {
-
+    console.log(this.alignement)
+  this.personnage.alignement=this.alignement;
     sessionStorage.setItem('personnage', JSON.stringify(this.personnage));
     this.router.navigate(['/stuff-personnage']);
   }
