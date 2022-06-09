@@ -12,7 +12,7 @@ import { Equipement } from '../model/equipement';
   providedIn: 'root',
 })
 export class JoueurService {
-  url: string = 'http://localhost:8080/api/joueur';
+  url: string = 'http://localhost:8080/boot/api/joueur';
   constructor(private httpClient: HttpClient) {}
 
   getByIdJoueur(id: number): Observable<Joueur> {
@@ -69,10 +69,8 @@ export class JoueurService {
       genre: personnage.genre,
       alignement: personnage.alignement,
       race: personnage.race,
-      caracteristiques: personnage.caracteristiques,
       stats: personnage.stats,
       stuff: personnage.stuff,
-      metier: personnage.metier,
     };
     return this.httpClient.post<Personnage>(this.url, personnageJson);
   }

@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AdminService {
-  url: string = 'http://localhost:8080/api/admin';
+  url: string = 'http://localhost:8080/boot/api/admin';
   constructor(private httpClient: HttpClient) {}
 
   getAllJoueurs(): Observable<Joueur[]> {

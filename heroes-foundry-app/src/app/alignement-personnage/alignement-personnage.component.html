@@ -140,14 +140,24 @@
       </a>
     </div>
   </div>
+
+  <select [(ngModel)] = "alignement">
+    <option value="LoyalBon">LoyalBon</option>
+    <option value="NeutreBon">NeutreBon</option>
+    <option value="ChaotiqueBon">ChaotiqueBon</option>
+    <option value="LoyalNeutre">LoyalNeutre</option>
+    <option value="Neutre">Neutre</option>
+    <option value="ChaotiqueNeutre">ChaotiqueNeutre</option>
+    <option value="LoyalMauvais">LoyalMauvais</option>
+    <option value="NeutreMauvais">NeutreMauvais</option>
+    <option value="CHaotiqueMauvais">CHaotiqueMauvais</option>
+  </select>
+
+
   <div class="mx-5 mt-3 row d-flex justify-content-end">
     <div class="col-2">
-      <a
-        class="user-create d-flex justify-content-center p-3"
-        routerLink="/stuff-personnage"
-        routerLinkActive="active"
-        >Suivant</a
-      >
+      <button class="user-create d-flex justify-content-center p-3" (click)="saveAlignement">Suivant
+      </button>
     </div>
   </div>
 </div>

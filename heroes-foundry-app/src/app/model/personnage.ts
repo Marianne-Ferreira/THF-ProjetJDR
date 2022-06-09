@@ -1,4 +1,3 @@
-import { PerformanceNodeTiming } from 'perf_hooks';
 import { Stats } from './stats';
 import { Stuff } from './stuff';
 
@@ -12,10 +11,8 @@ export class Personnage {
     private _genre?: string,
     private _alignement?: string,
     private _race?: string,
-    private _caracteristiques?: Caractéristiques, //A VERIFIER PARCE QUE LES DERNIERS SONT DES CLASSES A PAR ENTIERES
     private _stats?: Stats, //CREER LES MODELS SUIVANTS SVP
     private _stuff?: Stuff,
-    private _metier?: string
   ) {}
 
   get id(): number | undefined {
@@ -82,19 +79,11 @@ export class Personnage {
     this._race = value;
   }
 
-  get caracteristiques(): Caracteristiques | undefined {
-    return this._caracteristiques;
-  }
-
-  set id(value: Caracteristiques | undefined) {
-    this._caracteristiques = value;
-  }
-
   get stats(): Stats | undefined {
     return this._stats;
   }
 
-  set id(value: Stats | undefined) {
+  set stats(value: Stats | undefined) {
     this._stats = value;
   }
 
@@ -102,16 +91,8 @@ export class Personnage {
     return this._stuff;
   }
 
-  set id(value: Stuff | undefined) {
+  set stuff(value: Stuff | undefined) {
     this._stuff = value;
-  }
 
-  get metier(): string | undefined {
-    //c'est une enum donc à voir si on place le nom de l'enum ou le genre du truc qui sort
-    return this._metier;
-  }
-
-  set id(value: string | undefined) {
-    this._metier = value;
   }
 }

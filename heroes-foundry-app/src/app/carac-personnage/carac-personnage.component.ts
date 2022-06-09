@@ -1,6 +1,7 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit, NgModule } from '@angular/core';
 import { Router } from '@angular/router';
+import { Personnage } from '../model/personnage';
 
 @Component({
   selector: 'app-carac-personnage',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./carac-personnage.component.css'],
 })
 export class CaracPersonnageComponent implements OnInit {
-
+  personnage: Personnage = JSON.parse(sessionStorage.getItem('personnage')!);
 
 
   totalPointsResult = 27;
@@ -126,7 +127,6 @@ export class CaracPersonnageComponent implements OnInit {
       this.intelligenceValue--;
       this.totalPointsResult++;
     }
-    console.log(this.totalPointsIntelligence + '/' + this.totalPointsResult);
   }
 
   dexteriteValueChange(value: any) {
@@ -181,30 +181,19 @@ export class CaracPersonnageComponent implements OnInit {
 
 // Passage des infos au back
   saveCarac(){//voir l'url pour passer les infos
-    this.httpClient.post('http://local:8080/', {
 
-      force : this.forceValue,
+    let carac = {
+        force : this.forceValue,
       charisme : this.charismeValue,
       sagesse : this.sagesseValue,
       intelligence : this.intelligenceValue,
       dexterite : this.dexteriteValue,
       constitution : this.constitutionValue,
-    }).subscribe((data)=>{
+    }
 
-      this.router.navigate(['/metier-personnage']) //peut-etre besoin du /
-
-    })
-  }
+      sessionStorage.setItem('personnage', JSON.stringify(this.personnage));
+      this.router.navigate(['/competence-personnage']) //peut-etre besoin du /
 
 
 }
-
-
-// class
-
-// document.getElementById('toto')?.addEventListener('click', () => {
-//   console.log('click')
-//   fetch('http://localhost:4200/personnage')
-//   .then(res => { console.log(res)})
-//   .catch(err => { console.log(err)})
-// })
+}

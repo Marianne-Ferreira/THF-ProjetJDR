@@ -69,9 +69,18 @@
 </div>
 </div>
 
+<select [(ngModel)] = "metier">
+  <option value="Developpeur">Developpeur</option>
+  <option value="Rh">Rh</option>
+  <option value="ChefProjet">ChefProjet</option>
+  <option value="LeadTech">LeadTech</option>
+  <option value="BusinessAnalyst">BusinessAnalyst</option>
+  <option value="ProductOwner">ProductOwner</option>
+</select>
+
 <div class="mx-5 mt-3 row d-flex justify-content-end">
 <div class="col-2">
-  <a class="user-create d-flex justify-content-center p-3" routerLink="/carac-personnage" routerLinkActive="active">Suivant</a>
+  <button class="user-create d-flex justify-content-center p-3" (click)="saveMetier()">Suivant</button>
 </div>
 </div>
 

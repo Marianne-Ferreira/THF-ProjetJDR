@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { Personnage } from './../model/personnage';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stuff-personnage.component.css']
 })
 export class StuffPersonnageComponent implements OnInit {
+  personnage: Personnage = JSON.parse(sessionStorage.getItem('personnage')!);
+  stuff: string = 'monStuff';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+  saveStuff() {
+
+    sessionStorage.setItem('personnage', JSON.stringify(this.personnage));
+    this.router.navigate(['/recap-personnage']);
   }
 
 }

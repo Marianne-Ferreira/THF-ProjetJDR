@@ -1,3 +1,5 @@
+import { Personnage } from './../model/personnage';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./metier-personnage.component.css']
 })
 export class MetierPersonnageComponent implements OnInit {
+  personnage: Personnage = JSON.parse(sessionStorage.getItem('personnage')!);
+  metier: string='monmetier';
 
-  constructor() { }
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  saveMetier() {
+
+    sessionStorage.setItem('personnage', JSON.stringify(this.personnage));
+    this.router.navigate(['/carac-personnage']);
   }
 
 }

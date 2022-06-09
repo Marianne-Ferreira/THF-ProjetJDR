@@ -3,32 +3,15 @@
   <h2 class="col-8 d-flex justify-content-left align-items-center">Choisis ton genre !</h2>
 </div>
 
-<div class="justify-content-center row simpl-white">
-
-    <div class="col-3 form-check">
-      <input class="override-form-check-input form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-      <label class="form-check-label" for="flexRadioDefault1">F</label>
-    </div>
-
-
-
-<div class="col-3 form-check">
-  <input class="override-form-check-input form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-  <label class="form-check-label" for="flexRadioDefault1">M</label>
-</div>
-
-
-
-<div class="col-3 form-check">
-  <input class="override-form-check-input form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-  <label class="form-check-label" for="flexRadioDefault1">NB</label>
-</div>
-
-
-</div>
+<select [(ngModel)] = "genre">
+  <option value="M">M</option>
+  <option value="F">F</option>
+  <option value="NB">NB</option>
+</select>
 
 <div class="mx-5 mt-3 row d-flex justify-content-end">
   <div class="col-2">
-    <a class="user-create d-flex justify-content-center p-3" routerLink="/race-personnage" routerLinkActive="active">Suivant</a>
+    <button class="user-create d-flex justify-content-center p-3" (click)="saveGenre()">Suivant
+    </button>
   </div>
 </div>

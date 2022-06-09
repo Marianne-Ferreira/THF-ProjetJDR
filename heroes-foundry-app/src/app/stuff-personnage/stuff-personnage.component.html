@@ -124,13 +124,24 @@
       </div>
     </a>
 
+    <select [(ngModel)] = "stuff">
+      <option value="EpeeLongue">Epee Longue</option>
+      <option value="Dague">Dague</option>
+      <option value="Javeline">Javeline</option>
+      <option value="Hache">Hache</option>
+    </select>
 
+    <select [(ngModel)] = "stuff">
+      <option value="ArmureCuir">ArmureCuir</option>
+      <option value="ArmureCloutee">ArmureCloutee</option>
+      <option value="CoteMaille">CoteMaille</option>
+    </select>
 
-
-
-
-
-
+    <select [(ngModel)] = "stuff">
+      <option value="PotionSoin">PotionSoin</option>
+      <option value="PierreTonnerre">PierreTonnerre</option>
+      <option value="Poison">Poison</option>
+    </select>
 
   </div>
 
@@ -198,12 +209,8 @@
 
 <div class="mx-5 mt-3 row d-flex justify-content-end">
   <div class="col-2">
-    <a
-      class="user-create d-flex justify-content-center p-3"
-      routerLink="/recap-personnage"
-      routerLinkActive="active"
-      >Suivant</a
-    >+
+    <button class="user-create d-flex justify-content-center p-3" (click)="saveStuff">Suivant
+    </button>
   </div>
 </div>
 
