@@ -3,15 +3,25 @@
   <!--<img  class="banner" src="../assets/Heroes_Foundy_Logo_sans_fond.png"/>-->
 </div>
 
-<form>
+
+<div class="d-flex justify-content-center">
+  <p *ngIf="showError">{{ message }}</p>
+</div>
+
+<form (ngSubmit)="submit(form)" #form="ngForm">
   <div class="mb-3 d-flex justify-content-center">
-    <input class="user-input" type="text" placeholder="{{login}}">
+    <input name="login" [(ngModel)]="login" #loginCtrl="ngModel" required class="user-input" type="text" placeholder="Pseudo">
   </div>
   <div class="mb-3 d-flex justify-content-center">
-    <input type="password" class="user-input" type="text" placeholder="{{password}}">
+    <input  name="password" [(ngModel)]="password" #passwordCtrl="ngModel"
+    required type="password" class="user-input"  placeholder="Mot de passe">
   </div>
   <div class="mb-3 d-flex justify-content-center">
-  <a class="user-go d-flex justify-content-center p-3" routerLink="/home-user" routerLinkActive="active">{{submit}}</a>
+
+<button class="user-go d-flex justify-content-center p-3" type="submit" [disabled]="form.invalid">Allons-y !</button>
+
+<a class="user-go d-flex justify-content-center p-3" routerLink="/home-user" routerLinkActive="active">Allons-y !</a>
+
   </div>
 
   <!--<div class="col d-flex justify-content-center">
