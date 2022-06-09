@@ -1,4 +1,6 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit, NgModule } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carac-personnage',
@@ -6,6 +8,9 @@ import { Component, OnInit, NgModule } from '@angular/core';
   styleUrls: ['./carac-personnage.component.css'],
 })
 export class CaracPersonnageComponent implements OnInit {
+
+
+
   totalPointsResult = 27;
   totalPointsForce = 0;
   totalPointsCharisme = 0;
@@ -20,7 +25,7 @@ export class CaracPersonnageComponent implements OnInit {
   dexteriteValue = 8;
   constitutionValue = 8;
 
-  constructor() {}
+  constructor(private httpClient: HttpClient, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -173,7 +178,27 @@ export class CaracPersonnageComponent implements OnInit {
     }
     console.log(this.totalPointsConstitution + '/' + this.totalPointsResult);
   }
+
+// Passage des infos au back
+  saveCarac(){//voir l'url pour passer les infos
+    this.httpClient.post('http://local:8080/', {
+
+      force : this.forceValue,
+      charisme : this.charismeValue,
+      sagesse : this.sagesseValue,
+      intelligence : this.intelligenceValue,
+      dexterite : this.dexteriteValue,
+      constitution : this.constitutionValue,
+    }).subscribe((data)=>{
+
+      this.router.navigate(['/metier-personnage']) //peut-etre besoin du /
+
+    })
+  }
+
+
 }
+
 
 // class
 

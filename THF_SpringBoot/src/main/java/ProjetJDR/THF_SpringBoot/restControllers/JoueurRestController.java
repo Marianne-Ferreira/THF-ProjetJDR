@@ -47,7 +47,7 @@ public class JoueurRestController {
 
 	// INTERACTIONS AVEC SES PERSONNAGES
 
-	@GetMapping("/personnage") // Mais la ca va donner tous les personnages de tous les joueurs non ?
+	@GetMapping("/personnage")
 	@JsonView(JsonViews.Common.class)
 	public List<Personnage> getAllPersonnages() {
 		return personnageService.getAll();
@@ -85,7 +85,7 @@ public class JoueurRestController {
 		compteService.deleteByIdJoueur(id);
 	}//Possible avec la sécurité
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/pseudo")
 	@JsonView(JsonViews.Common.class)
 	public void DeleteJoueurByPseudo(@PathVariable String pseudo) {
 		compteService.deleteByPseudoJoueur(pseudo);
@@ -99,13 +99,13 @@ public class JoueurRestController {
 		return stuffService.getAll();
 	}
 
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/stuff/{id}")
 	@JsonView(JsonViews.PersonnageWithStuff.class)
 	public void DeleteStuffById(@PathVariable Long id) {
 		stuffService.deleteById(id);
 	}
 
-	@GetMapping("/stuff/{id}/")
+	@GetMapping("/stuff/{id}")
 	@JsonView(JsonViews.PersonnageWithStuff.class)
 	public Stuff getStuffById(@PathVariable Long id) {
 		return stuffService.getById(id);

@@ -1,4 +1,9 @@
+import { AdminService } from './../services/admin.service';
+import { Consommables } from './../model/consommables';
+import { Equipement } from './../model/equipement';
+import { Stuff } from './../model/stuff';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-gestion-boutique',
@@ -7,9 +12,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GestionBoutiqueComponent implements OnInit {
 
-  constructor() { }
+  equipement : Equipement[] = [];
+  consommables : Consommables[] = [];
+  message = '';
+  showMessage = false;
 
-  ngOnInit(): void {
+  constructor(
+    private adminService : AdminService,
+    private aR: ActivatedRoute
+  ) {}
+
+  initConsommables(consommables : Consommables) {
+    this.adminService.getAllConsommables(consommables).subscribe((datas) => {
+      this.consommables = datas;
+    });
   }
+
+  ngOnInit(): void {}
 
 }

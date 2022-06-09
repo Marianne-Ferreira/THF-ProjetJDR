@@ -45,14 +45,14 @@ public class PersonnageService {
 
 	}
 
-	// Retourne tous les personnages dont le metier est celui indiqué par
-	// l'utilisateur
-	public Personnage getPersonnageByMetier(Metiers metier) {
-		return personnageRepository.findPersonnageByMetier(metier).orElseThrow(() -> {
-			throw new PersonnageException("Veuillez insérer un Id existant");
-		});
-
-	}
+//	// Retourne tous les personnages dont le metier est celui indiqué par
+//	// l'utilisateur
+//	public Personnage getPersonnageByMetier(Metiers metier) {
+//		return personnageRepository.findPersonnageByMetier(metier).orElseThrow(() -> {
+//			throw new PersonnageException("Veuillez insérer un Id existant");
+//		});
+//
+//	}
 
 	public Personnage create(Personnage personnage) {
 		if (personnage.getNom() == null || personnage.getNom().isEmpty()) {

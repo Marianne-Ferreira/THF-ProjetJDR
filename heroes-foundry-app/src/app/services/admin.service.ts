@@ -43,6 +43,13 @@ export class AdminService {
     );
   }
 
+  //En double
+  /*getAllConsommables(consommables: Consommables): Observable<Consommables[]> {
+    return this.httpClient.get<Consommables[]>(
+      this.url + '/boutique/consommables'
+    );
+  }*/
+
   createConsommables(consommables: Consommables): Observable<Consommables> {
     return this.httpClient.post<Consommables>(
       this.url,
@@ -69,11 +76,6 @@ export class AdminService {
     );
   }
 
-  getAllConsommables(consommables: Consommables): Observable<Consommables[]> {
-    return this.httpClient.get<Consommables[]>(
-      this.url + '/boutique/consommables'
-    );
-  }
 
   createEquipement(equipement: Equipement): Observable<Equipement> {
     return this.httpClient.post<Equipement>(
@@ -102,3 +104,5 @@ export class AdminService {
     );
   }
 }
+
+

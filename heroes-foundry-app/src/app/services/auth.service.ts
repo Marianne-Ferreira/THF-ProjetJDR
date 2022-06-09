@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
   public auth(login: string, password: string): Observable<Compte> {
     let monHeaders = new HttpHeaders({
-      Authorization: 'Basic ' + btoa(${login}:${password}),
+      Authorization: 'Basic ' + btoa(`${login}:${password}`),
     });
     return this.httpClient.get<Compte>('http://localhost:8080/api/auth', {
       headers: monHeaders,
