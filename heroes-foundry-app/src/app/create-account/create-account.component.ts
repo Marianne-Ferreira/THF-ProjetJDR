@@ -62,14 +62,13 @@ export class CreateAccountComponent implements OnInit {
 
   submit() {
     let compte = {
+      pseudo: this.form.get('pseudo')?.value,
       prenom: this.form.get('prenom')?.value,
       nom: this.form.get('nom')?.value,
-      login: this.form.get('pseudo')?.value,
+      login: this.form.get('login')?.value,
       password: this.form.get('passwordGroup.password')?.value,
     };
-    console.log('toto');
     this.inscriptionService.inscription(compte).subscribe((data) => {
-      console.log('toto');
       this.router.navigate(['/home-user'], {
         queryParams: { inscription: true },
       });

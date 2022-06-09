@@ -28,8 +28,8 @@ public class Securityconfig extends WebSecurityConfigurerAdapter {
 				.and()
 				.authorizeHttpRequests()
 					.antMatchers(HttpMethod.OPTIONS).permitAll()
-					 .antMatchers(HttpMethod.GET,"/api/auth", "/api/auth/login/**", "/api/auth/connexion").permitAll()
-					 .antMatchers(HttpMethod.POST,"/api/auth","/api/auth/inscription").permitAll()
+					 .antMatchers(HttpMethod.GET,"/api/auth", "/api/auth/login/**").permitAll()
+					 .antMatchers(HttpMethod.POST,"/api/auth/inscription").permitAll()
                      
                      .antMatchers(HttpMethod.GET, "/api/admin/**").hasRole("ADMIN")
                      .antMatchers(HttpMethod.POST, "/api/admin/**").hasRole("ADMIN")

@@ -60,7 +60,7 @@ public class CompteRestController {
 		return compteService.checkLoginExist(login);
 	}
 	
-	@GetMapping("/auth")
+	@GetMapping("/connexion")
 	@JsonView(JsonViews.Common.class)
 	public Compte authentification(@AuthenticationPrincipal Compte compte ) {
 		return compte;

@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
         this.showError = false;
         sessionStorage.setItem('token', btoa(`${this.login}:${this.password}`));
         sessionStorage.setItem('compte', JSON.stringify(compte));
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/home-user');
       },
       error: (error: any) => {
         console.log(error);
