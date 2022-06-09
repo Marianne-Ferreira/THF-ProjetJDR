@@ -2,14 +2,24 @@ package ProjetJDR.THF_SpringBoot.entity;
 
 import java.util.Objects;
 
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "type_boutique")
+@Table(name = "boutique")
+@SequenceGenerator(sequenceName = "seq_boutique", name = "seqBoutiqueJPA", allocationSize = 1, initialValue = 1)
+
 public abstract class Boutique {
 
 	@Id

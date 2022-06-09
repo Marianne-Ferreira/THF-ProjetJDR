@@ -1,12 +1,13 @@
 package ProjetJDR.THF_SpringBoot.entity;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.SequenceGenerator;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
 @Entity
-@SequenceGenerator(name = "seqBoutique", sequenceName = "seq_consommables", initialValue = 1, allocationSize = 1)
+@DiscriminatorValue("consommables")
 public class Consommables extends Boutique {
 	@JsonView(JsonViews.ConsommablesFromBoutique.class)
 	private String libelle; 

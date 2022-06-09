@@ -12,10 +12,12 @@ public interface JoueurRepository extends JpaRepository <Joueur, Long> {
 	
 	Optional<Joueur> findByPseudo(String pseudo);
 	
-	@Query("select j from joueur j left join fetch j.personnages where j.id=:id")
+	@Query("select j from Joueur j left join fetch j.personnage where j.id=:id")
 	Optional<Joueur> findByIdWithPersonnages(@Param("id") Long id);
+
+	@Query("delete from Joueur j where j.pseudo=:pseudo")
+	void deleteByPseudoJoueur(String pseudo);
 	
-	@Query ("delete j from joueur j where j.pseudo =: pseudo")
-	Optional<Joueur> deleteByPseudoJoueur(String pseudo);
 	
+
 }

@@ -43,9 +43,9 @@ public class CompteService implements UserDetailsService {
 		return joueurRepository.findByIdWithPersonnages(id).orElseThrow(RuntimeException::new);
 	}
 
-	public Compte seConnecter(String login, String password) {
-		return compteRepository.seConnecter(login, password).orElseThrow(RuntimeException::new);
-	}
+//	public Compte seConnecter(String login, String password) {
+//		return compteRepository.seConnecter(login, password).orElseThrow(RuntimeException::new);
+//	}
 
 	public Compte create(Compte compte) {
 		// encodage du mot de passe quand on saura faire

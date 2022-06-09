@@ -13,12 +13,11 @@ import ProjetJDR.THF_SpringBoot.entity.Equipement;
 public interface EquipementRepository extends JpaRepository<Equipement, Long>{
 
 	
-	@Query("select e from equipement e where e.id=: id")
+	@Query("select e from Equipement e where e.id=: id")
 	Optional<Equipement> findByIdEquipement(@Param("id") Long id);
 
 	List<Equipement> findAll();
 
 	Optional<Equipement> findEquipementByLibelle(String libelle);
 
-	
 }

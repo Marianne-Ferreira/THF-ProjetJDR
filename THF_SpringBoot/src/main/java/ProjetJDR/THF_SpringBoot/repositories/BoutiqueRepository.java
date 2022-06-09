@@ -12,4 +12,5 @@ import ProjetJDR.THF_SpringBoot.entity.Boutique;
 
 public interface BoutiqueRepository extends JpaRepository<Boutique, Long> {
 
+
 }
