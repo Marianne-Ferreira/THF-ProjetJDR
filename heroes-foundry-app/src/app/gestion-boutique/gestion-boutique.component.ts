@@ -1,3 +1,6 @@
+import { Consommables } from './../model/consommables';
+import { Equipement } from './../model/equipement';
+import { Stuff } from './../model/stuff';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GestionBoutiqueComponent implements OnInit {
 
+  equipement : Equipement[] = [];
+  consommables : Consommables[] = [];
+  message = '';
+  showMessage = false;
+
   constructor() { }
 
   ngOnInit(): void {
+
+
   }
 
 }
