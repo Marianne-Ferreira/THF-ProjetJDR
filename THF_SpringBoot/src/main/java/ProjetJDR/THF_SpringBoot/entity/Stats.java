@@ -28,12 +28,12 @@ public class Stats {
 		@AttributeOverride(name = "constitution", column = @Column(name = "constitution_carac")) })
 	private Caracteristiques caracteristiques;
 
-	int ForceValue = request.getParameter("forceValue");
-	int IntelligenceValue = request.getParameter("intelligenceValue");
-	int ConstitutionValue = request.getParameter("constitutionValue");
-	int SagesseValue = request.getParameter("sagesseValue");
-	int DexteriteValue = request.getParameter("dexteriteValue");
-	int CharismeValue = request.getParameter("charismeValue");
+//	int ForceValue = request.getParameter("forceValue");
+//	int IntelligenceValue = request.getParameter("intelligenceValue");
+//	int ConstitutionValue = request.getParameter("constitutionValue");
+//	int SagesseValue = request.getParameter("sagesseValue");
+//	int DexteriteValue = request.getParameter("dexteriteValue");
+//	int CharismeValue = request.getParameter("charismeValue");
 
 	
 	// Compétences accessibles en fonction du métier choisi
@@ -66,25 +66,25 @@ public class Stats {
 	// /!\ IL FAUT QU'ON ARRIVE A RECUPERER LES DONNEES DU JS POUR QUE CA FONCTIONNE
 	// BIEN
 
-	public void BonusCaractéristique() {
-
-	 if (competence.equals("Arcanes") || competence.equals("Intimidation") || competence.equals("Investigation")
-				|| competence.equals("Intimidation") || competence.equals("Histoire")) {
-			IntelligenceValue = IntelligenceValue + 2;
-		}
-		else if (competence.equals("Athletisme")) {
-			ForceValue = ForceValue + 2;
-		}
-		else if (competence.equals("Representation") || competence.equals("Tromperie") || competence.equals("Persuasion")) {
-			CharismeValue = CharismeValue + 2;
-		}
-		else if (competence.equals("Survie") || competence.equals("Perspicacite") || competence.equals("Perception")) {
-			SagesseValue = SagesseValue + 2;
-		}
-		else if (competence.equals("Escamotage") || competence.equals("Discretion")) {
-			DexteriteValue = DexteriteValue + 2;
-		}
-	}
+//	public void BonusCaractéristique() {
+//
+//	 if (competence.equals("Arcanes") || competence.equals("Intimidation") || competence.equals("Investigation")
+//				|| competence.equals("Intimidation") || competence.equals("Histoire")) {
+//			IntelligenceValue = IntelligenceValue + 2;
+//		}
+//		else if (competence.equals("Athletisme")) {
+//			ForceValue = ForceValue + 2;
+//		}
+//		else if (competence.equals("Representation") || competence.equals("Tromperie") || competence.equals("Persuasion")) {
+//			CharismeValue = CharismeValue + 2;
+//		}
+//		else if (competence.equals("Survie") || competence.equals("Perspicacite") || competence.equals("Perception")) {
+//			SagesseValue = SagesseValue + 2;
+//		}
+//		else if (competence.equals("Escamotage") || competence.equals("Discretion")) {
+//			DexteriteValue = DexteriteValue + 2;
+//		}
+//	}
 
 	
 	
